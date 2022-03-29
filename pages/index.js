@@ -6,7 +6,12 @@ import Layout from '../components/Layouts/Layout';
 export default function Home() {
   return (
     <div>
-      <h1 className='text-3xl text-pink-600 '>sus</h1>
+      <div className="text-9xl">
+        <span className='text-pink-600 mr-9'>warren</span>
+        <span className='text-cyan-400'>yun</span>
+      </div>
+      
+      <h1 className='text-3xl thin'>beep</h1>
     </div>
   );
 }
