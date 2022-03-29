@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-import Layout from '../Util/Layout';
+import Layout from '../components/Layouts/Layout';
 
 export default function Home() {
   return (
     <div>
-      <h1 className=' text-pink-600 text-3xl'>hello</h1>
+      <h1 className='text-3xl text-pink-600 '>sus</h1>
     </div>
   );
 }
