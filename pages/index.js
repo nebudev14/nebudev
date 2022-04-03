@@ -26,6 +26,7 @@ export default function Home() {
           I&apos;m a developer from New York ridiculously passionate
           about technology, science, and everything in between.
         </h1>
+        <h1 className="mt-6">Currently listening to..</h1>
       </div>
     </div>
   );
