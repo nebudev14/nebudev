@@ -4,6 +4,7 @@ import { FaProjectDiagram } from "react-icons/fa";
 
 import Link from "next/link";
 
+
 const icons = [
   {
     link: "/",
@@ -24,14 +25,15 @@ const icons = [
 ];
 
 export default function Header() {
+
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="z-50 flex flex-col items-center justify-center h-screen text-white">
       {icons.map((icon, i) => (
         <div
           key={i}
           className="mb-8 duration-200 hover:text-pink-600 hover:cursor-pointer"
         >
-          <Link href={`${icon.link}`}>{icon.icon}</Link>
+          <Link href={icon.link} scroll={false}>{icon.icon}</Link>
         </div>
       ))}
     </div>

@@ -1,12 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import Layout from "../components/Layouts/Layout";
 import Social from "../components/Social";
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center flex-auto" id="home">
+    <div className="flex items-center justify-center h-screen">
       <div className="flex flex-col items-center justify-start mr-12">
         <Image
           src="/warren.png"
@@ -31,7 +30,3 @@ export default function Home() {
     </div>
   );
 }
-
-Home.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
-};
