@@ -33,7 +33,7 @@ const experiences = [
 
 export default function About() {
   return (
-    <div className="flex flex-col items-start justify-start h-full px-16 py-32 mx-80">
+    <div className="flex flex-col items-start justify-start h-full px-16 py-32 mx-40">
       <h1 className="mb-16 text-7xl">Experiences</h1>
       <div className="grid grid-cols-2 gap-12">
         {experiences.map((exp, i) => (
