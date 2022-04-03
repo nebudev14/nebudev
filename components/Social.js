@@ -1,25 +1,29 @@
-import Image from "next/image";
+import { BsInstagram, BsTwitter, BsLinkedin, BsGithub } from "react-icons/bs";
 
 const socials = [
   {
     alt: "github",
-    path: "/github.svg",
+    img: <BsGithub size={50} />,
     link: "https://github.com/NebuDev14",
+    color: "text-pink-600",
   },
   {
     alt: "insta",
-    path: "/instagram.svg",
+    img: <BsInstagram size={50} />,
     link: "https://www.instagram.com/nebudev14/",
+    color: "text-pink-500",
   },
   {
     alt: "twitter",
-    path: "/twitter.svg",
+    img: <BsTwitter size={50} />,
     link: "https://twitter.com/nebudev14",
+    color: "text-cyan-400",
   },
   {
     alt: "linkedin",
-    path: "/linkedin.svg",
+    img: <BsLinkedin size={50} />,
     link: "https://www.linkedin.com/in/warren-yun-240984216/",
+    color: "text-cyan-600",
   },
 ];
 
@@ -29,15 +33,10 @@ export default function Social() {
       {socials.map((icon, i) => (
         <div
           key={i}
-          className="mr-6 duration-200 cursor-pointer hover:scale-125"
+          className="mr-6 duration-200 cursor-pointer hover:text-gray-400"
         >
           <a href={icon.link} target="_blank" rel="noreferrer">
-            <Image
-              src={`/social/${icon.path}`}
-              alt={icon.alt}
-              width={50}
-              height={50}
-            />
+            {icon.img}
           </a>
         </div>
       ))}

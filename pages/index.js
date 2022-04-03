@@ -24,7 +24,7 @@ export default function Home() {
           <span className="text-cyan-400">Yun.</span>
         </div>
         <h1 className="inline-block m-0 text-3xl thin">
-          I&apos;m a student developer from New York ridiculously passionate
+          I&apos;m a developer from New York ridiculously passionate
           about technology, science, and everything in between.
         </h1>
       </div>
