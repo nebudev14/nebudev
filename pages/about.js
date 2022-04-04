@@ -2,11 +2,11 @@ import Image from "next/image";
 
 const experiences = [
   {
-    name: "Lumiere",
-    img: "lumiere.png",
-    role: "Technology Product Manager",
-    time: "Nov 2021 - Jan 2022",
-    desc: "Developed portions of the website to improve UI/UX using Next.js and Tailwind CSS.",
+    name: "Sciborgs",
+    img: "sciborgs.png",
+    role: "Member",
+    time: "Nov 2021 - Present",
+    desc: "heaheah i do the cod e",
   },
   {
     name: "Science Olympiad",
@@ -14,6 +14,13 @@ const experiences = [
     role: "Competitor",
     time: "Oct 2021 - Present",
     desc: "Competed in events like Detector Building, WiFi-Lab, and A&P. Assisted building the website using React and Styled Components. Also met some pretty awesome people :)",
+  },
+  {
+    name: "Lumiere",
+    img: "lumiere.png",
+    role: "Technology Product Manager",
+    time: "Nov 2021 - Jan 2022",
+    desc: "Developed portions of the website to improve UI/UX using Next.js and Tailwind CSS.",
   },
   {
     name: "The Orpheus Show",
