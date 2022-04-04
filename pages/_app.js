@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps, router }) {
             animate="enter"
             exit="exit"
             variants={variants}
-            transition={({ type: "linear" }, { duration: 0.5 })}
+            transition={({ type: "linear" }, { duration: 0.4 })}
             key={router.asPath}
           >
             <Component {...pageProps} />
