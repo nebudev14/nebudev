@@ -10,12 +10,10 @@ spotifyApi.setCredentials({
   redirectUri: 'http://localhost:3000/callback/',
 });
 
-
 export default function handler(req, res) {
   if (req.method == "GET") {
 
     spotifyApi.refreshAccessToken().then(function (data) {
-      // Set the access token on the API object so that it's used in all future requests
       spotifyApi.setAccessToken(data.body["access_token"]);
       spotifyApi
         .getMyCurrentPlayingTrack()
