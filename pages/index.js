@@ -64,6 +64,15 @@ export default function Home(props) {
 
 export const getStaticProps = async () => {
   const getData = await axios.get("http://localhost:3000/api/spotify");
+  if (Object.keys(getData.data.data.body).length === 0) {
+    return {
+      props: {
+        isPlaying: false,
+        song: "Not listening on Spotify right now.",
+      },
+    };
+  }
+  
   const isPlaying = getData.data.data.body.is_playing;
   const link = getData.data.data.body.item.external_urls.spotify;
   let song = {};
