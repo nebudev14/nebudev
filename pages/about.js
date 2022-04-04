@@ -13,7 +13,7 @@ const experiences = [
     img: "scioly.png",
     role: "Competitor",
     time: "Oct 2021 - Present",
-    desc: "Competed in events like Detector Building, WiFi-Lab, and A&P. Assisted building the website using React and Styled Components.",
+    desc: "Competed in events like Detector Building, WiFi-Lab, and A&P. Assisted building the website using React and Styled Components. Also met some pretty awesome people :)",
   },
   {
     name: "The Orpheus Show",

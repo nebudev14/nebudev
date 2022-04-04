@@ -1,11 +1,12 @@
 import Image from "next/image";
-import { useRouter } from "next/router";
 import Social from "../components/Social";
 
 import axios from "axios";
-import { FaSpotify } from "react-icons/fa";
+import { FaSpotify, FaMusic } from "react-icons/fa";
 
-export default function Home({ props }) {
+export default function Home(props) {
+  const songName = props.song;
+  const isPlaying = props.isPlaying;
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="flex flex-col items-center justify-start mr-12">
@@ -28,12 +29,33 @@ export default function Home({ props }) {
           I&apos;m a developer from New York ridiculously passionate about
           technology, science, and everything in between.
         </h1>
-        <div className="flex flex-row items-center justify-start mt-2">
-          <FaSpotify size={30} className="mr-2 text-green-400"/>
-          <span>Currently listening to..</span>
+        <div className="flex flex-row items-center justify-start mt-3">
+          <FaSpotify size={30} className="mr-2 text-green-400" />
+          {isPlaying ? <FaMusic size={20} className="mr-2 text-purple-500" /> : ''}
+          
+          {isPlaying ? <span>Currently listening to <u className="text-green-400">{songName}</u> </span> : <span>{songName}</span>}
+          
+          {isPlaying ? <FaMusic size={20} className="ml-2 text-purple-500" /> : ''}
         </div>
       </div>
     </div>
   );
 }
 
+export const getStaticProps = async () => {
+  const getData = await axios.get("http://localhost:3000/api/spotify");
+  const isPlaying = getData.data.data.body.is_playing;
+  let song = {};
+  if(!isPlaying) {
+    song = "Not listening on Spotify right now."
+  } else {
+    song = getData.data.data.body.item.name;
+  }
+  
+  return {
+    props: {
+      isPlaying,
+      song,
+    },
+  };
+};

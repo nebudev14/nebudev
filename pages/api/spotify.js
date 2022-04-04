@@ -8,8 +8,8 @@ export default function handler(req, res) {
       clientSecret: process.env.REACT_APP_CLIENT_SECRET,
       redirectUri: process.env.REDIRECT_URI,
     });
-    console.log(process.env.TOKEN)
-    spotify.setAccessToken(process.env.TOKEN);
+
+    spotify.setAccessToken(process.env.TOKEN)
     spotify
       .getMyCurrentPlayingTrack()
       .then(function (data) {
