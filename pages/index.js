@@ -4,6 +4,7 @@ import Link from "next/link";
 import Social from "../components/Social";
 import axios from "axios";
 import { FaSpotify, FaMusic } from "react-icons/fa";
+import { get } from "spotify-web-api-node/src/http-manager";
 
 export default function Home(props) {
   const songName = props.song;
@@ -64,29 +65,30 @@ export default function Home(props) {
 
 export const getStaticProps = async () => {
   const getData = await axios.get("http://localhost:3000/api/spotify");
-  if (Object.keys(getData.data.data.body).length === 0) {
+  const fetchedData = getData.data.data.body;
+  if (Object.keys(fetchedData).length === 0) {
     return {
       props: {
         isPlaying: false,
         song: "Not listening on Spotify right now.",
       },
     };
-  }
-  
-  const isPlaying = getData.data.data.body.is_playing;
-  const link = getData.data.data.body.item.external_urls.spotify;
-  let song = {};
-  if (!isPlaying) {
-    song = "Not listening on Spotify right now.";
   } else {
-    song = getData.data.data.body.item.name;
-  }
+    const isPlaying = fetchedData.is_playing;
+    const link = fetchedData.item.external_urls.spotify;
+    let song = {};
+    if (!isPlaying) {
+      song = "Not listening on Spotify right now.";
+    } else {
+      song = fetchedData.item.name;
+    }
 
-  return {
-    props: {
-      isPlaying,
-      song,
-      link,
-    },
-  };
+    return {
+      props: {
+        isPlaying,
+        song,
+        link,
+      },
+    };
+  }
 };
