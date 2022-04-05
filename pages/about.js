@@ -1,20 +1,20 @@
 import Image from "next/image";
 
 const experiences = [
-  {
-    name: "Sciborgs",
-    img: "sciborgs.png",
-    role: "Member",
-    time: "Nov 2021 - Present",
-    desc: "heaheah i do the cod e",
-  },
-  {
-    name: "Science Olympiad",
-    img: "scioly.png",
-    role: "Competitor",
-    time: "Oct 2021 - Present",
-    desc: "Competed in events like Detector Building, WiFi-Lab, and A&P. Assisted building the website using React and Styled Components. Also met some pretty awesome people :)",
-  },
+  // {
+  //   name: "Sciborgs",
+  //   img: "sciborgs.png",
+  //   role: "Member",
+  //   time: "Nov 2021 - Present",
+  //   desc: "heaheah i do the cod e",
+  // },
+  // {
+  //   name: "Science Olympiad",
+  //   img: "scioly.png",
+  //   role: "Competitor",
+  //   time: "Oct 2021 - Present",
+  //   desc: "Competed in events like Detector Building, WiFi-Lab, and A&P. Assisted building the website using React and Styled Components. Also met some pretty awesome people :)",
+  // },
   {
     name: "Lumiere",
     img: "lumiere.png",
