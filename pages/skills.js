@@ -108,15 +108,15 @@ const frameworks = [
     name: "Flutter",
     icon: <SiFlutter size={65} />,
     year: "2021",
-    color: "border-cyan-700"
+    color: "border-cyan-300"
   },
 ]
 
 export default function Skills() {
   return (
     <div className="h-full px-16 py-32 mx-40 ">
-      <h1 className="mb-8 text-7xl">Skills</h1>
-      <h2 className="mb-8 text-xl">
+      <h1 className="inline mb-8 border-b-4 text-7xl border-cyan-400">Skills</h1>
+      <h2 className="py-2 my-8 text-xl">
         Here are the <span className="text-cyan-400">skills</span> I&apos;ve
         developed from personal projects/experiences!
       </h2>

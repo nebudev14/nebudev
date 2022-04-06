@@ -6,7 +6,7 @@ const experiences = [
     img: "sciborgs.png",
     role: "Member",
     time: "Nov 2021 - Present",
-    desc: "At my school's robotics team, we write robot code in Java and",
+    desc: "At my school's robotics team, we write robot code in Java and mess around with robot mechaisms.",
   },
   {
     name: "Science Olympiad",
@@ -40,9 +40,9 @@ const experiences = [
 
 export default function About() {
   return (
-    <div className="flex flex-col items-start justify-start h-full px-16 py-32 mx-40">
-      <h1 className="mb-8 text-7xl">Experiences</h1>
-      <h2 className="mb-16 text-xl">Here are some <span className="text-pink-600">experiences</span> I&apos;ve had throughout my high school career currently!</h2>
+    <div className="h-full px-16 py-32 mx-40">
+      <h1 className="inline py-2 mb-8 border-b-4 border-pink-600 text-7xl">Experiences</h1>
+      <h2 className="mt-12 mb-12 xt-xl mt">Here are some <span className="text-pink-600">experiences</span> I&apos;ve had throughout my high school career currently!</h2>
       <div className="grid grid-cols-2 gap-12">
         {experiences.map((exp, i) => (
           <div

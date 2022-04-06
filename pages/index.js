@@ -63,7 +63,9 @@ export default function Home(props) {
 }
 
 export const getStaticProps = async () => {
-  const getData = await axios.get("http://localhost:3000/api/spotify");
+  require("dotenv").config();
+  
+  const getData = await axios.get(`${process.env.DOMAIN}/api/spotify`);
   const fetchedData = getData.data.data.body;
   if (Object.keys(fetchedData).length === 0) {
     return {
