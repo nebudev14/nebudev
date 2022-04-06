@@ -3,19 +3,17 @@ import {
   SiJava,
   SiPython,
   SiGoland,
-  SiCplusplus,
+  SiArduino,
   SiPostgresql,
   SiPrisma,
   SiNodedotjs,
-  SiNextdoor,
   SiTailwindcss,
   SiGit,
   SiHtml5,
   SiCss3,
   SiReact,
-  SiStyledcomponents,
   SiFlutter,
-  SiAndroidstudio,
+  SiNextdotjs,
 } from "react-icons/si";
 
 const skills = [
@@ -23,7 +21,7 @@ const skills = [
     name: "Python",
     icon: <SiPython size={65} />,
     year: "2020",
-    color: "border-cyan-400"
+    color: "border-cyan-500"
   },
   {
     name: "Javascript",
@@ -37,21 +35,110 @@ const skills = [
     year: "2020",
     color: "border-orange-500"
   },
+  {
+    name: "Go",
+    icon: <SiGoland size={65} />,
+    year: "2021",
+    color: "border-cyan-400"
+  },
+  {
+    name: "Node.js",
+    icon: <SiNodedotjs size={65} />,
+    year: "2021",
+    color: "border-green-400"
+  },
+  {
+    name: "Arduino",
+    icon: <SiArduino size={65} />,
+    year: "2020",
+    color: "border-cyan-300"
+  },
+  {
+    name: "PostgreSQL",
+    icon: <SiPostgresql size={65} />,
+    year: "2021",
+    color: "border-blue-400"
+  },
+  {
+    name: "HTML",
+    icon: <SiHtml5 size={65} />,
+    year: "2020",
+    color: "border-orange-400"
+  },
+  {
+    name: "CSS",
+    icon: <SiCss3 size={65} />,
+    year: "2020",
+    color: "border-cyan-400"
+  },
 ];
+
+const frameworks = [
+  {
+    name: "Next.Js",
+    icon: <SiNextdotjs size={65} />,
+    year: "2021",
+    color: ""
+  },
+  {
+    name: "TailwindCSS",
+    icon: <SiTailwindcss size={65} />,
+    year: "2021",
+    color: "border-cyan-400"
+  },
+  {
+    name: "Prisma",
+    icon: <SiPrisma size={65} />,
+    year: "2021",
+    color: "border-cyan-600"
+  },
+  {
+    name: "Git",
+    icon: <SiGit size={65} />,
+    year: "2020",
+    color: "border-orange-600"
+  },
+  {
+    name: "React",
+    icon: <SiReact size={65} />,
+    year: "2022",
+    color: "border-cyan-400"
+  },
+  {
+    name: "Flutter",
+    icon: <SiFlutter size={65} />,
+    year: "2021",
+    color: "border-cyan-700"
+  },
+]
 
 export default function Skills() {
   return (
     <div className="h-full px-16 py-32 mx-40 ">
       <h1 className="mb-8 text-7xl">Skills</h1>
-      <h2 className="mb-16 text-xl">
+      <h2 className="mb-8 text-xl">
         Here are the <span className="text-cyan-400">skills</span> I&apos;ve
         developed from personal projects/experiences!
       </h2>
-      <div className="grid grid-cols-2 gap-12">
+      <h2 className="mb-6 text-3xl">Languages</h2>
+      <div className="grid grid-cols-2 gap-12 mb-10">
         {skills.map((skill, i) => (
           <div
             key={i}
-            className={`px-10 py-6 border rounded-3xl ${skill.color}`}
+            className={`px-10 py-6 border-2 rounded-3xl ${skill.color}`}
+          >
+            <h1 className="mb-3 text-5xl">{skill.name}</h1>
+            <span className="">{skill.year}</span>
+            <div className="mt-4">{skill.icon}</div>
+          </div>
+        ))}
+      </div>
+      <h2 className="my-6 text-3xl">Frameworks/Tools</h2>
+      <div className="grid grid-cols-2 gap-12 mb-10">
+        {frameworks.map((skill, i) => (
+          <div
+            key={i}
+            className={`px-10 py-6 border-2 rounded-3xl ${skill.color}`}
           >
             <h1 className="mb-3 text-5xl">{skill.name}</h1>
             <span className="">{skill.year}</span>
