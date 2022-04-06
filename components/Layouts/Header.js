@@ -27,7 +27,7 @@ const icons = [
 export default function Header() {
 
   return (
-    <div className="z-50 flex flex-col items-center justify-center h-screen text-white">
+    <div className="fixed z-50 flex flex-col items-center justify-center h-screen text-white">
       {icons.map((icon, i) => (
         <div
           key={i}

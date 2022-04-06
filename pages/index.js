@@ -4,7 +4,6 @@ import Link from "next/link";
 import Social from "../components/Social";
 import axios from "axios";
 import { FaSpotify, FaMusic } from "react-icons/fa";
-import { get } from "spotify-web-api-node/src/http-manager";
 
 export default function Home(props) {
   const songName = props.song;
@@ -89,6 +88,6 @@ export const getStaticProps = async () => {
         song,
         link,
       },
-    };
+    };  
   }
 };
