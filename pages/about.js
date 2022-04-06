@@ -42,7 +42,7 @@ export default function About() {
   return (
     <div className="h-full px-16 py-32 mx-40">
       <h1 className="inline py-2 mb-8 border-b-4 border-pink-600 text-7xl">Experiences</h1>
-      <h2 className="mt-12 mb-12 xt-xl mt">Here are some <span className="text-pink-600">experiences</span> I&apos;ve had throughout my high school career currently!</h2>
+      <h2 className="mt-12 mb-12 text-xl">Here are some <span className="text-pink-600">experiences</span> I&apos;ve had throughout my high school career currently!</h2>
       <div className="grid grid-cols-2 gap-12">
         {experiences.map((exp, i) => (
           <div

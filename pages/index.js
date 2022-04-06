@@ -14,7 +14,7 @@ export default function Home(props) {
     <div className="flex items-center justify-center h-screen">
       <div className="flex flex-col items-center justify-start mr-12">
         <Image
-          src="/warren.png"
+          src="/placeholder.png"
           alt="warren"
           width={275}
           height={275}
