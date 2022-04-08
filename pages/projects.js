@@ -8,7 +8,8 @@ import {
 } from "@apollo/client";
 
 import { setContext } from "@apollo/client/link/context";
-import { FaStar } from 'react-icons/fa';
+import Link from "next/link";
+import { FaStar } from "react-icons/fa";
 
 export default function Projects(props) {
   return (
@@ -20,13 +21,24 @@ export default function Projects(props) {
         Some of the <span className="text-green-400">projects</span> I&apos;ve
         worked on!
       </h2>
-      <span className="thin">(Fetched using the Github API)</span>
-      <div className="grid grid-cols-2 gap-12 my-10">
+      <span className="mb-6 text-xl thin">(Fetched using the Github API)</span>
+      <div className="grid grid-cols-2 gap-16 my-10">
         {props.repos.map((repo, i) => (
-          <div key={i} className="px-6 py-12 border rounded-3xl ">
-            <h1 className="mb-4 text-2xl">{repo.nameWithOwner}</h1>
-            <span className="text-xl thin">{repo.description}</span>
-          </div>
+          <Link key={i} href={repo.url} passHref>
+            <div className="px-6 py-4 duration-200 border border-black hover:cursor-pointer hover:border-gray-600 rounded-3xl">
+              <div className="pb-4 mb-4 border-b-4 border-green-400">
+                <h1 className="py-2 text-2xl">
+                  {repo.nameWithOwner}
+                </h1>
+                <div className="flex flex-row items-center justify-start">
+                  <FaStar size={20} className="text-yellow-400"/>
+                  <h1 className="ml-2 text-lg">{repo.stargazerCount}</h1>
+                </div>
+              </div>
+
+              <span className="mb-8 text-xl thin">{repo.description}</span>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
@@ -56,31 +68,29 @@ export const getStaticProps = async () => {
 
   const { data } = await client.query({
     query: gql`
-    {
-      user(login: "NebuDev14") {
-        pinnedItems(first: 6) {
-          totalCount
-          edges {
-            node {
-              ... on Repository {
-                id
-                url
-                stargazerCount
-                description
-                isInOrganization
-                nameWithOwner
+      {
+        user(login: "NebuDev14") {
+          pinnedItems(first: 6) {
+            totalCount
+            edges {
+              node {
+                ... on Repository {
+                  id
+                  url
+                  stargazerCount
+                  description
+                  nameWithOwner
+                }
               }
             }
           }
         }
       }
-    }
     `,
   });
 
   const { user } = data;
   const pinnedItems = user.pinnedItems.edges.map(({ node }) => node);
-
 
   return {
     props: {
