@@ -6,9 +6,9 @@ import axios from "axios";
 import { FaSpotify, FaMusic } from "react-icons/fa";
 
 export default function Home(props) {
-  const songName = props.song;
-  const isPlaying = props.isPlaying;
-  const link = props.link;
+  // const songName = props.song;
+  // const isPlaying = props.isPlaying;
+  // const link = props.link;
 
   return (
     <div className="flex items-center justify-center h-screen md:flex-col">
@@ -35,13 +35,13 @@ export default function Home(props) {
         </h1>
         <div className="flex flex-row items-center justify-start mt-3 md:text-sm md:flex-col md:items-start">
           <FaSpotify size={30} className="mr-2 text-green-400 md:hidden" />
-          {isPlaying ? (
+          {/* {isPlaying ? (
             <FaMusic size={20} className="mr-2 text-purple-500 md:hidden" />
           ) : (
             ""
-          )}
+          )} */}
 
-          {isPlaying ? (
+          {/* {isPlaying ? (
             <span className="md:mt-2">
               Currently listening to{" "}
               <u className="text-green-400">
@@ -57,41 +57,41 @@ export default function Home(props) {
             <FaMusic size={20} className="ml-2 text-purple-500 md:hidden" />
           ) : (
             ""
-          )}
+          )} */}
         </div>
       </div>
     </div>
   );
 }
 
-export const getStaticProps = async () => {
-  require("dotenv").config();
+// export const getStaticProps = async () => {
+//   require("dotenv").config();
   
-  const getData = await axios.get(`${process.env.DOMAIN}/api/spotify`);
-  const fetchedData = getData.data.data.body;
-  if (Object.keys(fetchedData).length === 0) {
-    return {
-      props: {
-        isPlaying: false,
-        song: "Not listening on Spotify right now.",
-      },
-    };
-  } else {
-    const isPlaying = fetchedData.is_playing;
-    const link = fetchedData.item.external_urls.spotify;
-    let song = {};
-    if (!isPlaying) {
-      song = "Not listening on Spotify right now.";
-    } else {
-      song = fetchedData.item.name;
-    }
+//   const getData = await axios.get(`${process.env.DOMAIN}/api/spotify`);
+//   const fetchedData = getData.data.data.body;
+//   if (Object.keys(fetchedData).length === 0) {
+//     return {
+//       props: {
+//         isPlaying: false,
+//         song: "Not listening on Spotify right now.",
+//       },
+//     };
+//   } else {
+//     const isPlaying = fetchedData.is_playing;
+//     const link = fetchedData.item.external_urls.spotify;
+//     let song = {};
+//     if (!isPlaying) {
+//       song = "Not listening on Spotify right now.";
+//     } else {
+//       song = fetchedData.item.name;
+//     }
 
-    return {
-      props: {
-        isPlaying,
-        song,
-        link,
-      },
-    };  
-  }
-};
+//     return {
+//       props: {
+//         isPlaying,
+//         song,
+//         link,
+//       },
+//     };  
+//   }
+// };
