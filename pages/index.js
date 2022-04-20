@@ -30,8 +30,7 @@ export default function Home(props) {
           <span className="text-cyan-400">Yun.</span>
         </div>
         <h1 className="inline-block m-0 text-3xl thin md:text-lg">
-          I&apos;m a developer from New York ridiculously passionate about
-          technology, science, and everything in between.
+          I&apos;m a developer from New York interested in technology and science, and an avid lover of building new things.
         </h1>
         <div className="flex flex-row items-center justify-start mt-3 md:text-sm md:flex-col md:items-start">
           <FaSpotify size={30} className="mr-2 text-green-400 md:hidden" />
