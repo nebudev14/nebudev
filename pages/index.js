@@ -64,7 +64,7 @@ export default function Home(props) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   require("dotenv").config();
   
   const getData = await axios.get(`${process.env.DOMAIN}/api/spotify`);
