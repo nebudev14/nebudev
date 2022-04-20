@@ -114,33 +114,33 @@ const frameworks = [
 
 export default function Skills() {
   return (
-    <div className="h-full px-16 py-32 mx-40 ">
-      <h1 className="inline mb-8 border-b-4 text-7xl border-cyan-400">Skills</h1>
+    <div className="h-full px-16 py-32 mx-40 md:mx-0 md:px-2 md:py-16">
+      <h1 className="inline py-2 mb-8 border-b-4 text-7xl border-cyan-400 md:text-3xl">Skills</h1>
       <h2 className="py-2 my-8 text-xl">
         Here are the <span className="text-cyan-400">skills</span> I&apos;ve
         developed from personal projects/experiences!
       </h2>
       <h2 className="mb-6 text-3xl">Languages</h2>
-      <div className="grid grid-cols-2 gap-12 mb-10">
+      <div className="grid grid-cols-2 gap-12 mb-10 md:grid-cols-1">
         {skills.map((skill, i) => (
           <div
             key={i}
             className={`px-10 py-6 border-2 rounded-3xl ${skill.color}`}
           >
-            <h1 className="mb-3 text-5xl">{skill.name}</h1>
+            <h1 className="mb-3 text-5xl md:text-2xl">{skill.name}</h1>
             <span className="">{skill.year}</span>
             <div className="mt-4">{skill.icon}</div>
           </div>
         ))}
       </div>
       <h2 className="my-6 text-3xl">Frameworks/Tools</h2>
-      <div className="grid grid-cols-2 gap-12 mb-10">
+      <div className="grid grid-cols-2 gap-12 mb-10 md:grid-cols-1">
         {frameworks.map((skill, i) => (
           <div
             key={i}
             className={`px-10 py-6 border-2 rounded-3xl ${skill.color}`}
           >
-            <h1 className="mb-3 text-5xl">{skill.name}</h1>
+            <h1 className="mb-3 text-5xl md:text-2xl">{skill.name}</h1>
             <span className="">{skill.year}</span>
             <div className="mt-4">{skill.icon}</div>
           </div>
