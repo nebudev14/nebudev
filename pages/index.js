@@ -33,27 +33,28 @@ export default function Home(props) {
           I&apos;m a developer from New York ridiculously passionate about
           technology, science, and everything in between.
         </h1>
-        <div className="flex flex-row items-center justify-start mt-3 md:text-sm">
-          <FaSpotify size={30} className="mr-2 text-green-400" />
+        <div className="flex flex-row items-center justify-start mt-3 md:text-sm md:flex-col md:items-start">
+          <FaSpotify size={30} className="mr-2 text-green-400 md:hidden" />
           {isPlaying ? (
-            <FaMusic size={20} className="mr-2 text-purple-500" />
+            <FaMusic size={20} className="mr-2 text-purple-500 md:hidden" />
           ) : (
             ""
           )}
 
           {isPlaying ? (
-            <span>
+            <span className="md:mt-2">
               Currently listening to{" "}
               <u className="text-green-400">
                 <Link href={link}>{songName}</Link>
               </u>{" "}
+              <FaSpotify size={25} className="hidden mr-2 text-green-400 md:inline md:ml-1" />
             </span>
           ) : (
             <span>{songName}</span>
           )}
 
           {isPlaying ? (
-            <FaMusic size={20} className="ml-2 text-purple-500" />
+            <FaMusic size={20} className="ml-2 text-purple-500 md:hidden" />
           ) : (
             ""
           )}
