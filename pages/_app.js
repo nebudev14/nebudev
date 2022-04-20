@@ -12,9 +12,9 @@ function MyApp({ Component, pageProps, router }) {
   };
 
   return (
-    <div className="px-8">
+    <div className="px-8 md:flex md:flex-col">
       <Header />
-      <div className="text-white bg-black">
+      <div className="flex-row text-white bg-black">
         <AnimatePresence exitBeforeEnter>
           <motion.div
             initial="hidden"

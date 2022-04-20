@@ -4,28 +4,28 @@ import { IoMdMail } from "react-icons/io";
 const socials = [
   {
     alt: "github",
-    img: <BsGithub size={50} />,
+    img: <BsGithub className="text-5xl md:text-3xl"/>,
     link: "https://github.com/NebuDev14",
   },
   {
     alt: "insta",
-    img: <BsInstagram size={50} />,
+    img: <BsInstagram className="text-5xl md:text-3xl" />,
     link: "https://www.instagram.com/nebudev14/",
   },
   {
     alt: "twitter",
-    img: <BsTwitter size={50} />,
+    img: <BsTwitter className="text-5xl md:text-3xl" />,
     link: "https://twitter.com/nebudev14",
   },
   {
     alt: "email",
-    img: <IoMdMail size={55} />,
+    img: <IoMdMail className="text-5xl md:text-3xl" />,
     link: "mailto:yunw@bxscience.edu",
     color: "text-cyan-600",
   },
   {
     alt: "linkedin",
-    img: <BsLinkedin size={50} />,
+    img: <BsLinkedin className="text-5xl md:text-3xl" />,
     link: "https://www.linkedin.com/in/warren-yun-240984216/",
   },
 ];
