@@ -13,7 +13,7 @@ export default function Home(props) {
   return (
     <div className="flex items-center justify-center h-screen md:flex-col">
       <div className="flex flex-col items-center justify-center mr-12 md:hidden">
-      <Image
+        <Image
           src="/warren.png"
           alt="warren"
           width={275}
@@ -30,7 +30,8 @@ export default function Home(props) {
           <span className="text-cyan-400">Yun.</span>
         </div>
         <h1 className="inline-block m-0 text-3xl thin md:text-lg">
-          I&apos;m a developer from New York interested in technology and science, and an avid lover of building new things.
+          I&apos;m a developer from New York interested in technology and
+          science, and an avid lover of building new things.
         </h1>
         <div className="flex flex-row items-center justify-start mt-3 md:text-sm md:flex-col md:items-start">
           <FaSpotify size={30} className="mr-2 text-green-400 md:hidden" />
@@ -46,7 +47,10 @@ export default function Home(props) {
               <u className="text-green-400">
                 <Link href={link}>{songName}</Link>
               </u>{" "}
-              <FaSpotify size={25} className="hidden mr-2 text-green-400 md:inline md:ml-1" />
+              <FaSpotify
+                size={25}
+                className="hidden mr-2 text-green-400 md:inline md:ml-1"
+              />
             </span>
           ) : (
             <span>{songName}</span>
@@ -65,7 +69,7 @@ export default function Home(props) {
 
 export const getServerSideProps = async () => {
   require("dotenv").config();
-  
+
   const getData = await axios.get(`${process.env.DOMAIN}/api/spotify`);
   const fetchedData = getData.data.data.body;
   if (Object.keys(fetchedData).length === 0) {
@@ -91,6 +95,6 @@ export const getServerSideProps = async () => {
         song,
         link,
       },
-    };  
+    };
   }
 };

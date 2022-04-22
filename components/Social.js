@@ -1,4 +1,5 @@
 import { BsInstagram, BsTwitter, BsLinkedin, BsGithub } from "react-icons/bs";
+import { SiPolywork } from "react-icons/si";
 import { IoMdMail } from "react-icons/io";
 
 const socials = [
@@ -18,15 +19,20 @@ const socials = [
     link: "https://twitter.com/nebudev14",
   },
   {
+    alt: "linkedin",
+    img: <BsLinkedin className="text-5xl md:text-3xl" />,
+    link: "https://www.linkedin.com/in/warren-yun-240984216/",
+  },
+  {
+    alt: "polywork",
+    img: <SiPolywork className="text-5xl md:text-3xl" />,
+    link: "https://www.polywork.com/nebudev14",
+  },
+  {
     alt: "email",
     img: <IoMdMail className="text-5xl md:text-3xl" />,
     link: "mailto:yunw@bxscience.edu",
     color: "text-cyan-600",
-  },
-  {
-    alt: "linkedin",
-    img: <BsLinkedin className="text-5xl md:text-3xl" />,
-    link: "https://www.linkedin.com/in/warren-yun-240984216/",
   },
 ];
 
