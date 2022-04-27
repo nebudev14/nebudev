@@ -9,12 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.5.10",
     "autoprefixer": "^10.4.4",
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
     "framer-motion": "^6.2.8",
-    "graphql": "^16.3.0",
     "next": "12.1.2",
     "node-spotify-api": "^1.1.1",
     "postcss": "^8.4.12",
