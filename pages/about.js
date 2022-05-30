@@ -19,6 +19,14 @@ const experiences = [
     link: "https://bxscioly.github.io/",
   },
   {
+    name: "AtomHacks",
+    img: "AtomHacks.png",
+    role: "Head of Programming",
+    time: "Oct 2021 - Present",
+    desc: "Assisted with event organization, mentored and helped participants with technical difficulties, and helped develop the website!",
+    link: "https://atomhacks.org/",
+  },
+  {
     name: "Lumiere",
     img: "lumiere.png",
     role: "Technology Product Manager",
