@@ -1,9 +1,9 @@
 import "../styles/globals.css";
 import { AnimatePresence, motion } from "framer-motion";
 import Header from "../components/Layouts/Header";
+import Page from "../components/Layouts/Page";
 
 function MyApp({ Component, pageProps, router }) {
-  const getLayout = Component.getLayout || ((page) => page);
 
   const variants = {
     hidden: { opacity: 0, x: -200, y: 0 },
@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps, router }) {
   };
 
   return (
-    <div className="px-8 md:flex md:flex-col">
+    <Page>
       <Header />
       <div className="flex-row text-white bg-black">
         <AnimatePresence exitBeforeEnter>
@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps, router }) {
           </motion.div>
         </AnimatePresence>
       </div>
-    </div>
+    </Page>
   );
 }
 
