@@ -14,6 +14,7 @@ import {
   SiReact,
   SiFlutter,
   SiNextdotjs,
+  SiTypescript
 } from "react-icons/si";
 
 const skills = [
@@ -28,6 +29,12 @@ const skills = [
     icon: <SiJavascript size={65} />,
     year: "2021",
     color: "border-yellow-400"
+  },
+  {
+    name: "Typescript",
+    icon: <SiTypescript size={65} />,
+    year: "2022",
+    color: "border-cyan-600"
   },
   {
     name: "Java",

@@ -31,6 +31,13 @@ const projects = [
     "link": "https://github.com/NebuDev14/nebudev"
   },
   {
+    "name": "FRQ-Submission",
+    "stars": "0",
+    "desc": "Website for submitting APCS FRQ responses.",
+    "tags": ["Javascript", "Next.Js", "TailwindCSS"],
+    "link": "https://github.com/NebuDev14/FRQ-Submission"
+  },
+  {
     "name": "eduHub",
     "stars": "3",
     "desc": "A website dedicated to finding educational resources easily. Made during CodeOverflow 2022.",
