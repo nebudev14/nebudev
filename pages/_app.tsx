@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import { AnimatePresence, motion } from "framer-motion";
 import Header from "../components/Layouts/Header";
-import Page from "../components/Layouts/Page";
+import { Page } from "../components/Layouts/page";
 import { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     <Page>
       <Header />
       <div className="flex-row text-white bg-black">
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence exitBeforeEnter />
           <motion.div
             initial="hidden"
             animate="enter"
@@ -27,7 +27,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           >
             <Component {...pageProps} />
           </motion.div>
-        </AnimatePresence>
       </div>
     </Page>
   );
