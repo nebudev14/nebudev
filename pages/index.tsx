@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Social from "../components/Social";
+import { Social } from "../components/social";
 import axios from "axios";
 import { FaSpotify, FaMusic } from "react-icons/fa";
 import { GetServerSideProps, NextPage } from "next";
@@ -71,7 +71,7 @@ const Home: NextPage<Props> = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   require("dotenv").config();

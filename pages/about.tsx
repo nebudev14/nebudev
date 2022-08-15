@@ -1,3 +1,4 @@
+import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -44,7 +45,7 @@ const experiences = [
   },
 ];
 
-export default function About() {
+const About: NextPage = () => {
   return (
     <div className="h-full px-16 py-32 mx-40 md:mx-0 md:px-2 md:py-16">
       <h1 className="inline py-2 mb-8 border-b-4 border-pink-600 text-7xl md:text-3xl">
@@ -86,3 +87,5 @@ export default function About() {
     </div>
   );
 }
+
+export default About;
