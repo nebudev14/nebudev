@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import { AnimatePresence, motion } from "framer-motion";
-import Header from "../components/Layouts/Header";
+import { Header } from "../components/Layouts/header";
 import { Page } from "../components/Layouts/page";
 import { AppProps } from "next/app";
 

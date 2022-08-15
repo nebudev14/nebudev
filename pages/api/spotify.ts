@@ -1,7 +1,10 @@
-const SpotifyWebApi = require("spotify-web-api-node");
+import { NextApiRequest, NextApiResponse } from "next";
+
+import SpotifyWebApi from "spotify-web-api-node";
+
 require("dotenv").config();
 
-var spotifyApi = new SpotifyWebApi();
+let spotifyApi = new SpotifyWebApi();
 
 spotifyApi.setCredentials({
   clientId: process.env.SPOTIFY_CLIENT_ID,
@@ -10,7 +13,7 @@ spotifyApi.setCredentials({
   redirectUri: 'http://localhost:3000/callback/',
 });
 
-export default function handler(req, res) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method == "GET") {
 
     spotifyApi.refreshAccessToken().then(function (data) {
