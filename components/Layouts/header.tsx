@@ -32,7 +32,7 @@ export const Header: React.FC = () => {
       {icons.map((icon, i) => (
         <div
           key={i}
-          className={`mb-6 px-2 py-1 border-l-4 duration-200 hover:text-cyan-400 hover:cursor-pointer md:mb-0 md:mx-3 ${
+          className={`mb-6 px-2 py-1 border-l-4 duration-200 hover:text-cyan-400 md:py-2 md:border-b-2 md:border-l-0 hover:cursor-pointer md:mb-0 md:mx-2 ${
             selected === i ? "border-pink-600" : "border-black"
           }`}
           onClick={() => setSelcted(i)}
