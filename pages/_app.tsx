@@ -2,8 +2,9 @@ import "../styles/globals.css";
 import { AnimatePresence, motion } from "framer-motion";
 import Header from "../components/Layouts/Header";
 import Page from "../components/Layouts/Page";
+import { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps, router }) {
+function MyApp({ Component, pageProps, router }: AppProps) {
 
   const variants = {
     hidden: { opacity: 0, x: -200, y: 0 },
@@ -21,7 +22,7 @@ function MyApp({ Component, pageProps, router }) {
             animate="enter"
             exit="exit"
             variants={variants}
-            transition={({ type: "linear" }, { duration: 0.4 })}
+            transition={({ duration: 0.4 })}
             key={router.asPath}
           >
             <Component {...pageProps} />

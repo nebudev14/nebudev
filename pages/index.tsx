@@ -4,8 +4,15 @@ import Link from "next/link";
 import Social from "../components/Social";
 import axios from "axios";
 import { FaSpotify, FaMusic } from "react-icons/fa";
+import { GetServerSideProps, NextPage } from "next";
 
-export default function Home(props) {
+interface Props {
+  song: string;
+  isPlaying: boolean;
+  link: string;
+}
+
+const Home: NextPage<Props> = (props) => {
   const songName = props.song;
   const isPlaying = props.isPlaying;
   const link = props.link;
@@ -19,7 +26,6 @@ export default function Home(props) {
           width={275}
           height={275}
           className="rounded-3xl"
-          layout=""
         />
       </div>
       <div className="w-1/2 md:w-full">
@@ -67,7 +73,7 @@ export default function Home(props) {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   require("dotenv").config();
 
   const getData = await axios.get(`${process.env.DOMAIN}/api/spotify`);
@@ -98,3 +104,5 @@ export const getServerSideProps = async () => {
     };
   }
 };
+
+export default Home;
