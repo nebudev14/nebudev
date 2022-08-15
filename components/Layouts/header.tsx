@@ -24,7 +24,7 @@ const icons = [
   },
 ];
 
-export default function Header() {
+export const Header: React.FC = () => {
 
   return (
     <div className="fixed z-50 flex flex-col items-center justify-center h-screen mt-4 text-white md:flex-row md:h-full md:relative">

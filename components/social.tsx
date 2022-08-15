@@ -36,7 +36,7 @@ const socials = [
   },
 ];
 
-export default function Social() {
+export const Social: React.FC = () => {
   return (
     <div className="flex flex-row items-center justify-start mb-4">
       {socials.map((icon, i) => (
