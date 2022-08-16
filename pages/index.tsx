@@ -36,7 +36,7 @@ const Home: NextPage<Props> = (props) => {
           <span className="text-cyan-400">Yun.</span>
         </div>
         <h1 className="inline-block m-0 text-3xl thin md:text-lg">
-          I&apos;m a avid maker from New York interested in robotics, web development, and embedded systems and security.
+          I&apos;m a avid maker from New York interested in robotics, web development, and embedded security.
         </h1>
         <div className="flex flex-row items-center justify-start mt-3 md:text-sm md:flex-col md:items-start">
           <FaSpotify size={30} className="mr-2 text-green-400 md:hidden" />
