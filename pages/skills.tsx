@@ -16,10 +16,23 @@ import {
   SiFlutter,
   SiNextdotjs,
   SiTypescript,
-  SiGraphql
+  SiGraphql,
+  SiDocker
 } from "react-icons/si";
 
 const skills = [
+  {
+    name: "Typescript",
+    icon: <SiTypescript size={65} />,
+    year: "2022",
+    color: "border-cyan-600",
+  },
+  {
+    name: "Go",
+    icon: <SiGoland size={65} />,
+    year: "2021",
+    color: "border-cyan-400",
+  },
   {
     name: "Python",
     icon: <SiPython size={65} />,
@@ -33,22 +46,10 @@ const skills = [
     color: "border-yellow-400",
   },
   {
-    name: "Typescript",
-    icon: <SiTypescript size={65} />,
-    year: "2022",
-    color: "border-cyan-600",
-  },
-  {
     name: "Java",
     icon: <SiJava size={65} />,
     year: "2020",
     color: "border-orange-500",
-  },
-  {
-    name: "Go",
-    icon: <SiGoland size={65} />,
-    year: "2021",
-    color: "border-cyan-400",
   },
   {
     name: "Node.js",
@@ -106,6 +107,12 @@ const frameworks = [
     icon: <SiGraphql size={65} />,
     year: "2021",
     color: "border-pink-500",
+  },
+  {
+    name: "Docker",
+    icon: <SiDocker size={65} />,
+    year: "2021",
+    color: "border-cyan-400",
   },
   {
     name: "Git",

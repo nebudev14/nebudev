@@ -14,9 +14,9 @@ const experiences = [
   {
     name: "Science Olympiad",
     img: "scioly.png",
-    role: "Competitor",
+    role: "Competitor/Marketing Team",
     time: "Oct 2021 - Present",
-    desc: "Competed in events like Detector Building, WiFi-Lab, and A&P. Assisted building the website using React and Styled Components. Also met some pretty awesome people :)",
+    desc: "Competed in events like Detector Building, WiFi-Lab, and A&P. Assisted building the website using React and Styled Components",
     link: "https://bxscioly.github.io/",
   },
   {
@@ -59,9 +59,9 @@ const About: NextPage = () => {
         {experiences.map((exp, i) => (
           <Link key={i} href={exp.link} passHref>
             <div
-              className="p-4 px-16 duration-200 border border-gray-400 rounded-3xl hover:border-pink-600 md:p-2 md:px-8 hover:cursor-pointer"
+              className="p-4 px-10 duration-200 border border-gray-400 rounded-3xl hover:border-pink-600 md:p-2 md:px-8 hover:cursor-pointer"
             >
-              <h1 className="my-10 text-2xl text-white md:text-lg">
+              <h1 className="my-6 text-2xl text-white thin md:text-lg">
                 {exp.role}
               </h1>
 
