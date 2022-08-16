@@ -112,7 +112,7 @@ const projects = [
 
 const Project: NextPage = () => {
   return (
-    <div className="h-full px-16 py-32 mx-40 md:mx-0 md:px-2 md:py-16">
+    <div className="h-full px-4 py-32 mx-40 md:mx-0 md:px-2 md:py-16">
       <h1 className="inline py-2 mb-8 border-b-4 border-green-400 text-7xl md:text-3xl">
         Projects
       </h1>

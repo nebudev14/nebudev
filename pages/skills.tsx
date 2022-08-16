@@ -16,6 +16,7 @@ import {
   SiFlutter,
   SiNextdotjs,
   SiTypescript,
+  SiGraphql
 } from "react-icons/si";
 
 const skills = [
@@ -101,6 +102,12 @@ const frameworks = [
     color: "border-cyan-600",
   },
   {
+    name: "GraphQL",
+    icon: <SiGraphql size={65} />,
+    year: "2021",
+    color: "border-pink-500",
+  },
+  {
     name: "Git",
     icon: <SiGit size={65} />,
     year: "2020",
@@ -122,7 +129,7 @@ const frameworks = [
 
 const Skills: NextPage = () => {
   return (
-    <div className="h-full px-16 py-32 mx-40 md:mx-0 md:px-2 md:py-16">
+    <div className="h-full px-4 py-32 mx-40 md:mx-0 md:px-2 md:py-16">
       <h1 className="inline py-2 mb-8 border-b-4 text-7xl border-cyan-400 md:text-3xl">
         Skills
       </h1>
