@@ -8,7 +8,7 @@ const experiences = [
     img: "sciborgs.png",
     role: "Member",
     time: "Nov 2021 - Present",
-    desc: "At my school's robotics team, we write robot code in Java and mess around with robot mechaisms using the WPILIB API.",
+    desc: "At my school's robotics team, we write robot code in Java and mess around with robot mechanisms using the WPILIB API.",
     link: "https://www.sciborgs1155.org/",
   },
   {
