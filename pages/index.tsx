@@ -19,15 +19,7 @@ const Home: NextPage<Props> = (props) => {
 
   return (
     <div className="flex items-center justify-center h-screen md:flex-col">
-      <div className="flex flex-col items-center justify-center mr-12 md:hidden">
-        <Image
-          src="/warren.png"
-          alt="warren"
-          width={275}
-          height={275}
-          className="rounded-3xl"
-        />
-      </div>
+
       <div className="w-1/2 md:w-full">
         <Social />
         <div className="inline-flex text-8xl md:text-3xl">
