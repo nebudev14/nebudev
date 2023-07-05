@@ -11,7 +11,7 @@ const icons = [
     icon: <CgHome className="text-4xl md:text-2xl" />,
   },
   {
-    link: "/about",
+    link: "#about",
     icon: <CgProfile className="text-4xl md:text-2xl" />,
   },
   {
