@@ -31,13 +31,6 @@ export const Timeline: React.FC = () => {
       link: "https://www.steamworksrobotics.com/",
     },
     {
-      name: "TechCodes",
-      role: "Executive",
-      time: "",
-      desc: "I helped with development of Astrius, an education tool that powered TechCodes' Summer Code Camp 2022.",
-      link: "https://techcodes.org/",
-    },
-    {
       name: "Lumiere",
       role: "Technology Product Manager",
       time: "Nov 2021 - Jan 2022",
@@ -78,7 +71,7 @@ export const Timeline: React.FC = () => {
             </div>
 
             <div className="relative order-1 w-5/12 shadow-xl md:w-full rounded-xl bg-zinc-900 group ">
-              <div className="absolute z-10 order-1 p-1 transition duration-200 rounded-sm opacity-75 -inset-0.5 bg-gradient-to-r to-pink-600 from-[#bb0fa0] blur-xl group-hover:opacity-100 group-hover:duration-200 animate-tilt" />
+              <div className="absolute z-10 order-1 p-1 transition duration-200 rounded-sm opacity-75 -inset-0.5 bg-gradient-to-r to-zinc-800 from-zinc-800 blur-xl group-hover:opacity-100 group-hover:duration-200 animate-tilt" />
               <Link key={i} href={experience.link} passHref>
                 <div className="relative z-30 px-5 py-4 hover:cursor-pointer rounded-xl bg-zinc-900">
                   <h3
