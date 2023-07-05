@@ -1,4 +1,39 @@
 export const Timeline: React.FC = () => {
+  const experiences = [
+    {
+      name: "Sciborgs",
+      img: "sciborgs.png",
+      role: "Captain",
+      time: "Nov 2021 - Present",
+      desc: "At my school's robotics team, we write robot code in Java and mess around with robot mechanisms using the WPILIB API.",
+      link: "https://www.sciborgs1155.org/",
+    },
+    {
+      name: "AtomHacks",
+      img: "AtomHacks.png",
+      role: "Head of Programming",
+      time: "Oct 2021 - Present",
+      desc: "Assisted with event organization, mentored and helped participants with technical difficulties, and helped develop the website!",
+      link: "https://atomhacks.org/",
+    },
+    {
+      name: "Lumiere",
+      img: "lumiere.png",
+      role: "Technology Product Manager",
+      time: "Nov 2021 - Jan 2022",
+      desc: "Developed portions of the website to improve UI/UX using Next.js and Tailwind CSS.",
+      link: "https://lumiere.codes/",
+    },
+    {
+      name: "The Orpheus Show",
+      img: "orpheus.png",
+      role: "Co-Host and Development",
+      time: "Aug 2021 - Sep 2021",
+      desc: "Co-hosted podcast episodes, assisted with operations, and developed the website using Next.js and CSS.",
+      link: "https://podcast.hackclub.com/",
+    },
+  ];
+
   return (
     <div className="w-full h-full px-16 mx-auto pb-14">
       <div className="relative h-full p-10 overflow-hidden wrap">
@@ -10,73 +45,29 @@ export const Timeline: React.FC = () => {
           style={{ left: "50%" }}
         ></div>
 
-        <div className="flex items-center justify-between w-full mb-8 right-timeline">
-          <div className="order-1 w-5/12"></div>
-          <div className="z-20 flex items-center order-1 w-8 h-8 bg-pink-600 rounded-full shadow-xl">
-            <h1 className="mx-auto text-lg font-semibold text-white"></h1>
+        {experiences.map((experience, i) => (
+          <div
+            className={`flex items-center justify-between w-full mb-8 right-timeline ${
+              i % 2 != 0 ? `flex-row-reverse text-right` : ``
+            }`}
+            key={i}
+          >
+            <div className="order-1 w-5/12"></div>
+            <div
+              className={`z-20 flex items-center order-1 w-8 h-8  rounded-full shadow-xl ${
+                i % 2 == 0 ? `bg-pink-600` : `bg-cyan-400`
+              }`}
+            >
+              <h1 className="mx-auto text-lg font-semibold text-white"></h1>
+            </div>
+            <div className="order-1 w-5/12 px-6 py-4 rounded-lg shadow-xl bg-zinc-900">
+              <h3 className="mb-3 text-2xl font-bold text-white">{experience.name}</h3>
+              <p className="text-base leading-snug tracking-wide text-gray-200 text-opacity-100">
+                {experience.desc}
+              </p>
+            </div>
           </div>
-          <div className="order-1 w-5/12 px-6 py-4 rounded-lg shadow-xl bg-zinc-900">
-            <h3 className="mb-3 text-xl font-bold text-white">Lorem Ipsum</h3>
-            <p className="text-sm leading-snug tracking-wide text-gray-200 text-opacity-100">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-row-reverse items-center justify-between w-full mb-8 left-timeline">
-          <div className="order-1 w-5/12"></div>
-          <div className="z-20 flex items-center order-1 w-8 h-8 rounded-full shadow-xl bg-cyan-400">
-            <h1 className="mx-auto text-lg font-semibold text-white"></h1>
-          </div>
-          <div className="order-1 w-5/12 px-6 py-4 rounded-lg shadow-xl bg-zinc-900">
-            <h3 className="mb-3 text-xl font-bold text-white">Lorem Ipsum</h3>
-            <p className="text-sm leading-snug tracking-wide text-gray-200 text-opacity-100">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between w-full mb-8 right-timeline">
-          <div className="order-1 w-5/12"></div>
-          <div className="z-20 flex items-center order-1 w-8 h-8 bg-pink-600 rounded-full shadow-xl">
-            <h1 className="mx-auto text-lg font-semibold text-white"></h1>
-          </div>
-          <div className="order-1 w-5/12 px-6 py-4 rounded-lg shadow-xl bg-zinc-900">
-            <h3 className="mb-3 text-xl font-bold text-white">
-              Lorem Ipsum
-            </h3>
-            <p className="text-sm leading-snug tracking-wide text-gray-200 text-opacity-100">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-row-reverse items-center justify-between w-full mb-8 left-timeline">
-          <div className="order-1 w-5/12"></div>
-          <div className="z-20 flex items-center order-1 w-8 h-8 rounded-full shadow-xl bg-cyan-400">
-            <h1 className="mx-auto text-lg font-semibold text-white"></h1>
-          </div>
-          <div className="order-1 w-5/12 px-6 py-4 rounded-lg shadow-xl bg-zinc-900">
-            <h3 className="mb-3 text-xl font-bold text-white">
-              Lorem Ipsum
-            </h3>
-            <p className="text-sm leading-snug tracking-wide text-gray-200 text-opacity-100">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
