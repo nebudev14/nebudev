@@ -47,7 +47,7 @@ export const Timeline: React.FC = () => {
 
         {experiences.map((experience, i) => (
           <div
-            className={`flex items-center justify-between w-full mb-8 right-timeline ${
+            className={`flex items-center justify-between w-full mb-8 py-4 right-timeline ${
               i % 2 != 0 ? `flex-row-reverse text-right` : ``
             }`}
             key={i}
@@ -60,11 +60,19 @@ export const Timeline: React.FC = () => {
             >
               <h1 className="mx-auto text-lg font-semibold text-white"></h1>
             </div>
-            <div className="order-1 w-5/12 px-6 py-4 rounded-lg shadow-xl bg-zinc-900">
-              <h3 className="mb-3 text-2xl font-bold text-white">{experience.name}</h3>
-              <p className="text-base leading-snug tracking-wide text-gray-200 text-opacity-100">
+            <div className="order-1 w-5/12 px-5 py-4 shadow-xl rounded-xl bg-zinc-900">
+              <h3
+                className={`inline-block  py-1 mb-2 text-2xl font-bold text-white border-b-2 ${
+                  i % 2 != 0 ? `pl-2 border-b-pink-600` : `pr-2 border-b-cyan-400`
+                }`}
+              >
+                {experience.name}
+              </h3>
+              <h3 className="mb-2 text-lg text-gray-400">{experience.role}</h3>
+              <p className="mb-4 text-base leading-snug tracking-wide text-gray-200 text-opacity-100">
                 {experience.desc}
               </p>
+              <p className="text-sm text-gray-400">{experience.time}</p>
             </div>
           </div>
         ))}
