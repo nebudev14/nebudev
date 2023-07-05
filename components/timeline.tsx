@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const Timeline: React.FC = () => {
   const experiences = [
     {
@@ -26,21 +28,21 @@ export const Timeline: React.FC = () => {
       role: "Mentor | Volunteer",
       time: "Oct 2023 - Mar 2023",
       desc: "For the 2022-2023 FIRST season, I helped mentor FTC teams in software and control, as well as volunteered at several FIRST competitions!",
-      link: "https://beaverworks.ll.mit.edu/CMS/bw/bwsi",
+      link: "https://www.steamworksrobotics.com/",
     },
     {
       name: "TechCodes",
       role: "Executive",
-      time: "June 2022 - Aug 2022",
+      time: "",
       desc: "I helped with development of Astrius, an education tool that powered TechCodes' Summer Code Camp 2022.",
-      link: "https://beaverworks.ll.mit.edu/CMS/bw/bwsi",
+      link: "https://techcodes.org/",
     },
     {
       name: "Lumiere",
       role: "Technology Product Manager",
       time: "Nov 2021 - Jan 2022",
       desc: "A media publication platform targeted towards STEM creators! Used Next.Js to add convenient posting features + core functionalities, and TailwindCSS to improve UI/UX.",
-      link: "https://lumiere.codes/",
+      link: "https://github.com/project-lumiere",
     },
     {
       name: "The Orpheus Show",
@@ -63,37 +65,43 @@ export const Timeline: React.FC = () => {
         ></div>
 
         {experiences.map((experience, i) => (
-          <div
-            className={`flex items-center justify-between w-full mb-8 py-4 right-timeline ${
-              i % 2 != 0 ? `flex-row-reverse text-right` : ``
-            }`}
-            key={i}
-          >
-            <div className="order-1 w-5/12"></div>
+          <Link key={i} href={experience.link} passHref>
             <div
-              className={`z-20 flex items-center order-1 w-8 h-8  rounded-full shadow-xl ${
-                i % 2 == 0 ? `bg-pink-600` : `bg-cyan-400`
+              className={`flex hover:cursor-pointer items-center justify-between mb-8 py-4 right-timeline ${
+                i % 2 == 0 ? `flex-row-reverse text-right` : ``
               }`}
             >
-              <h1 className="mx-auto text-lg font-semibold text-white"></h1>
-            </div>
-            <div className="order-1 w-5/12 px-5 py-4 shadow-xl rounded-xl bg-zinc-900">
-              <h3
-                className={`inline-block  py-1 mb-2 text-2xl font-bold text-white border-b-2 ${
-                  i % 2 != 0
-                    ? `pl-2 border-b-pink-600`
-                    : `pr-2 border-b-cyan-400`
+              <div className="order-1 w-5/12"></div>
+              <div
+                className={`z-20 flex items-center order-1 w-8 h-8  rounded-full shadow-xl ${
+                  i % 2 == 0 ? `bg-pink-600` : `bg-cyan-400`
                 }`}
               >
-                {experience.name}
-              </h3>
-              <h3 className="mb-2 text-lg text-gray-400">{experience.role}</h3>
-              <p className="mb-4 text-base font-medium leading-snug tracking-wide text-gray-200 text-opacity-100">
-                {experience.desc}
-              </p>
-              <p className="text-sm text-gray-400">{experience.time}</p>
+                <h1 className="mx-auto text-lg font-semibold text-white"></h1>
+              </div>
+              <div className="relative order-1 w-5/12 shadow-xl rounded-xl bg-zinc-900 group ">
+                <div className="absolute z-10 order-1 p-1 transition duration-200 rounded-sm opacity-75 -inset-0.5 bg-gradient-to-r to-pink-600 from-[#bb0fa0] blur-xl group-hover:opacity-100 group-hover:duration-200 animate-tilt" />
+                <div className="relative z-30 px-5 py-4 rounded-xl bg-zinc-900">
+                  <h3
+                    className={`inline-block  py-1 mb-2 text-2xl font-bold text-white border-b-2 ${
+                      i % 2 != 0
+                        ? `pr-2 border-b-pink-600`
+                        : `pl-2 border-b-cyan-400`
+                    }`}
+                  >
+                    {experience.name}
+                  </h3>
+                  <h3 className="mb-2 text-lg text-gray-400">
+                    {experience.role}
+                  </h3>
+                  <p className="mb-4 text-base font-medium leading-snug tracking-wide text-gray-200 text-opacity-100">
+                    {experience.desc}
+                  </p>
+                  <p className="text-sm text-gray-400">{experience.time}</p>
+                </div>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
