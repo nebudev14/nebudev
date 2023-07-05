@@ -54,36 +54,35 @@ export const Timeline: React.FC = () => {
   ];
 
   return (
-    <div className="w-full h-full px-16 mx-auto pb-14">
-      <div className="relative h-full p-10 overflow-hidden wrap">
-        <h1 className="inline-block px-2 py-2 mb-12 text-4xl font-bold border-b-4 border-b-pink-600">
+    <div className="w-full h-full px-16 mx-auto md:px-0 pb-14">
+      <div className="relative flex-wrap h-full p-10 overflow-hidden md:px-4 md:flex md:flex-col">
+        <h1 className="inline-block px-2 py-2 mb-12 text-4xl font-bold border-b-4 md:py-3 md:text-center border-b-pink-600">
           Experiences
         </h1>
         <div
-          className="absolute h-full border border-gray-200 border-2-2 border-opacity-20"
-          style={{ left: "50%" }}
+          className="absolute h-full border border-gray-200 border-2-2 border-opacity-20 left-1/2 md:hidden"
         ></div>
 
         {experiences.map((experience, i) => (
           <Link key={i} href={experience.link} passHref>
             <div
-              className={`flex hover:cursor-pointer items-center justify-between mb-8 py-4 right-timeline ${
+              className={`flex hover:cursor-pointer md:text-left items-center justify-between mb-8 py-4 right-timeline ${
                 i % 2 == 0 ? `flex-row-reverse text-right` : ``
               }`}
             >
-              <div className="order-1 w-5/12"></div>
+              <div className="order-1 w-5/12 md:hidden"></div>
               <div
-                className={`z-20 flex items-center order-1 w-8 h-8  rounded-full shadow-xl ${
+                className={`z-20 md:hidden flex items-center order-1 w-8 h-8  rounded-full shadow-xl ${
                   i % 2 == 0 ? `bg-pink-600` : `bg-cyan-400`
                 }`}
               >
                 <h1 className="mx-auto text-lg font-semibold text-white"></h1>
               </div>
-              <div className="relative order-1 w-5/12 shadow-xl rounded-xl bg-zinc-900 group ">
+              <div className="relative order-1 w-5/12 shadow-xl md:w-full rounded-xl bg-zinc-900 group ">
                 <div className="absolute z-10 order-1 p-1 transition duration-200 rounded-sm opacity-75 -inset-0.5 bg-gradient-to-r to-pink-600 from-[#bb0fa0] blur-xl group-hover:opacity-100 group-hover:duration-200 animate-tilt" />
                 <div className="relative z-30 px-5 py-4 rounded-xl bg-zinc-900">
                   <h3
-                    className={`inline-block  py-1 mb-2 text-2xl font-bold text-white border-b-2 ${
+                    className={`inline-block md:pl-0 py-1 mb-2 text-2xl font-bold text-white border-b-2 ${
                       i % 2 != 0
                         ? `pr-2 border-b-pink-600`
                         : `pl-2 border-b-cyan-400`
