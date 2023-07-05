@@ -23,7 +23,7 @@ const Home: NextPage<Props> = (props) => {
       <div className="flex items-center justify-center h-screen md:flex-col">
         <div className="flex flex-col items-center justify-center mr-12 md:hidden">
           <Image
-            src="/warren.jpg"
+            src="/warren.png"
             alt="warren"
             width={275}
             height={275}

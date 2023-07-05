@@ -6,7 +6,7 @@ const experiences = [
   {
     name: "Sciborgs",
     img: "sciborgs.png",
-    role: "Member",
+    role: "Capt",
     time: "Nov 2021 - Present",
     desc: "At my school's robotics team, we write robot code in Java and mess around with robot mechanisms using the WPILIB API.",
     link: "https://www.sciborgs1155.org/",
