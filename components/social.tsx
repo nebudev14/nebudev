@@ -5,7 +5,7 @@ import { IoMdMail } from "react-icons/io";
 const socials = [
   {
     alt: "github",
-    img: <BsGithub className="text-5xl md:text-3xl"/>,
+    img: <BsGithub className="text-5xl md:text-3xl" />,
     link: "https://github.com/NebuDev14",
   },
   {
@@ -31,24 +31,27 @@ const socials = [
   {
     alt: "email",
     img: <IoMdMail className="text-5xl md:text-3xl" />,
-    link: "mailto:yunw@bxscience.edu",
+    link: "mailto:hi@wyun.dev",
     color: "text-cyan-600",
   },
 ];
 
 export const Social: React.FC = () => {
   return (
-    <div className="flex flex-row items-center justify-start mb-4">
-      {socials.map((icon, i) => (
-        <div
-          key={i}
-          className="mr-6 duration-200 cursor-pointer hover:text-gray-400"
-        >
-          <a href={icon.link} target="_blank" rel="noreferrer">
-            {icon.img}
-          </a>
-        </div>
-      ))}
+    <div className="flex flex-col">
+      <h1 className="mb-4 font-mono">hi [at] wyun [dot] dev</h1>
+      <div className="flex flex-row items-center justify-start mb-4">
+        {socials.map((icon, i) => (
+          <div
+            key={i}
+            className="mr-6 duration-200 cursor-pointer hover:text-gray-400"
+          >
+            <a href={icon.link} target="_blank" rel="noreferrer">
+              {icon.img}
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};

@@ -29,6 +29,7 @@ const Home: NextPage<Props> = (props) => {
             height={275}
             className="rounded-3xl"
           />
+          <h1 className="mt-4 font-mono text-sm text-yellow-300">me at a razer store!</h1>
         </div>
         <div className="w-1/2 md:w-full">
           <Social />
