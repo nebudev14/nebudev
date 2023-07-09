@@ -29,7 +29,9 @@ const Home: NextPage<Props> = (props) => {
             height={275}
             className="rounded-3xl"
           />
-          <h1 className="mt-4 font-mono text-sm text-yellow-300">me at a razer store!</h1>
+          <h1 className="mt-4 font-mono text-sm ">
+            me at a <span className="text-green-400">razer</span> store!
+          </h1>
         </div>
         <div className="w-1/2 md:w-full">
           <Social />
@@ -38,9 +40,10 @@ const Home: NextPage<Props> = (props) => {
             <span className="mr-5 text-pink-600 md:mr-3">Warren</span>
             <span className="text-cyan-400">Yun.</span>
           </div>
-          <h1 className="inline-block m-0 text-3xl thin md:text-lg">
-            I&apos;m an avid maker from New York interested in robotics, web
-            development, and embedded security.
+          <h1 className="inline-block m-0 font-mono text-4xl md:text-lg ">
+            I&apos;m an avid maker from New York interested in{" "}
+            <span className="hover:text-yellow-400">robotics</span>,{" "}
+            <span className="hover:text-purple-500">web development</span>, and <span className="hover:text-cyan-700">embedded security</span>.
           </h1>
           <div className="flex flex-row items-center justify-start mt-3 md:text-sm md:flex-col md:items-start">
             <FaSpotify size={30} className="mr-2 text-green-400 md:hidden" />
@@ -53,7 +56,7 @@ const Home: NextPage<Props> = (props) => {
             {isPlaying ? (
               <span className="md:mt-2">
                 Currently jamming to{" "}
-                <u className="text-green-400">
+                <u className="font-mono text-green-400">
                   <Link href={link}>{songName}</Link>
                 </u>{" "}
                 <FaSpotify
