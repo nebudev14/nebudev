@@ -12,6 +12,10 @@
   src: url(./Inter/Inter-ExtraLight.ttf);
 }
 
+:root {
+  color-scheme: dark;
+}
+
 html,
 body {
   padding: 0;

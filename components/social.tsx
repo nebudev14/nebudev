@@ -39,7 +39,7 @@ const socials = [
 export const Social: React.FC = () => {
   return (
     <div className="flex flex-col">
-      <h1 className="mb-4 font-mono">hi [at] wyun [dot] dev</h1>
+
       <div className="flex flex-row items-center justify-start mb-4">
         {socials.map((icon, i) => (
           <div
