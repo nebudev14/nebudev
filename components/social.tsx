@@ -1,6 +1,7 @@
 import { BsInstagram, BsTwitter, BsLinkedin, BsGithub } from "react-icons/bs";
 import { SiPolywork } from "react-icons/si";
 import { IoMdMail } from "react-icons/io";
+import { Typing } from "./typing";
 
 const socials = [
   {
@@ -39,7 +40,12 @@ const socials = [
 export const Social: React.FC = () => {
   return (
     <div className="flex flex-col">
-      <h1 className="mb-4 font-mono">hi [at] wyun [dot] dev</h1>
+      <div>
+        <h1 className="inline-block mb-4 mr-1 font-mono">I<Typing phrases={["'m Warren"]}/></h1>
+        <span className="cursor-blink inline-block -translate-y-0.5 text-sm font-semibold">
+          |
+        </span>
+      </div>
       <div className="flex flex-row items-center justify-start mb-4">
         {socials.map((icon, i) => (
           <div

@@ -36,3 +36,14 @@ a {
 .thin {
   font-family: 'Inter-Thin';
 }
+
+/* blinking cursor */
+.cursor-blink {
+  animation: blink 1s infinite;
+  opacity: 1;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

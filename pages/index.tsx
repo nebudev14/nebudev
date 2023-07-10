@@ -80,11 +80,13 @@ const Home: NextPage<Props> = (props) => {
             )}
           </div>
         </div>
+      
       </div>
-      <h1 className="-mt-48 font-mono text-lg text-gray-400 mb-28 md:-mt-64 md:hidden">
+      <h1 className="font-mono text-lg text-gray-400 mb-28 md:-mt-64 md:hidden">
         <span className="md:hidden">business inquiries? reach me at</span>{" "}
         <span className="font-extrabold text-gray-300">hi [at] wyun [dot] dev</span>
       </h1>
+    
 
       <div>
         <Timeline />
