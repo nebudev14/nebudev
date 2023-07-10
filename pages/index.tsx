@@ -20,7 +20,7 @@ const Home: NextPage<Props> = (props) => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="flex items-center justify-center h-screen mt-16 md:flex-col md:justify-start">
+      <div className="flex items-center justify-center h-screen md:mt-16 md:flex-col md:justify-start">
         <div className="flex flex-col items-center justify-center mr-12 md:mr-0 md:mb-6">
           <Image
             src="/warren.jpeg"
@@ -43,7 +43,8 @@ const Home: NextPage<Props> = (props) => {
           <h1 className="inline-block m-0 font-mono text-4xl md:text-lg ">
             I&apos;m an avid maker from New York interested in{" "}
             <span className="hover:text-yellow-400">robotics</span>,{" "}
-            <span className="hover:text-purple-500">web development</span>, and <span className="hover:text-cyan-700">embedded security</span>.
+            <span className="hover:text-purple-500">web development</span>, and{" "}
+            <span className="hover:text-cyan-700">embedded security</span>.
           </h1>
           <div className="flex flex-row items-center justify-start mt-3 md:text-sm md:flex-col md:items-start">
             <FaSpotify size={30} className="mr-2 text-green-400 md:hidden" />
@@ -55,15 +56,17 @@ const Home: NextPage<Props> = (props) => {
 
             {isPlaying ? (
               <span className="md:mt-2">
-                <div className="inline-block mr-2 md:block">Currently jamming to{" "}</div>
+                <div className="inline-block mr-2 md:block">
+                  Currently jamming to{" "}
+                </div>
                 <span>
-                <u className="font-mono text-green-400">
-                  <Link href={link}>{songName}</Link>
-                </u>{" "}
-                <FaSpotify
-                  size={25}
-                  className="hidden mr-2 text-green-400 md:inline md:ml-1"
-                />
+                  <u className="font-mono text-green-400">
+                    <Link href={link}>{songName}</Link>
+                  </u>{" "}
+                  <FaSpotify
+                    size={25}
+                    className="hidden mr-2 text-green-400 md:inline md:ml-1"
+                  />
                 </span>
               </span>
             ) : (
@@ -77,9 +80,11 @@ const Home: NextPage<Props> = (props) => {
             )}
           </div>
         </div>
-
       </div>
-      <h1 className="-mt-48 font-mono text-lg mb-28 md:-mt-64 md:hidden"><span className="md:hidden">business inquiries? reach me at</span> <span className="font-extrabold ">hi [at] wyun [dot] dev</span></h1>
+      <h1 className="-mt-48 font-mono text-lg text-gray-400 mb-28 md:-mt-64 md:hidden">
+        <span className="md:hidden">business inquiries? reach me at</span>{" "}
+        <span className="font-extrabold text-gray-300">hi [at] wyun [dot] dev</span>
+      </h1>
 
       <div>
         <Timeline />
