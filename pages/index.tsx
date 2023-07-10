@@ -6,6 +6,7 @@ import axios from "axios";
 import { FaSpotify, FaMusic } from "react-icons/fa";
 import { GetServerSideProps, NextPage } from "next";
 import { Timeline } from "../components/timeline";
+import { useMediaQuery } from "../hooks/media";
 
 interface Props {
   song: string;
@@ -21,7 +22,7 @@ const Home: NextPage<Props> = (props) => {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="flex items-center justify-center h-screen md:flex-col">
-        <div className="flex flex-col items-center justify-center mr-12 md:hidden">
+        <div className="flex flex-col items-center justify-center mr-12 md:mr-0 md:mb-6">
           <Image
             src="/warren.jpeg"
             alt="warren"
@@ -55,7 +56,8 @@ const Home: NextPage<Props> = (props) => {
 
             {isPlaying ? (
               <span className="md:mt-2">
-                Currently jamming to{" "}
+                <div className="inline-block mr-2 md:block">Currently jamming to{" "}</div>
+                <span>
                 <u className="font-mono text-green-400">
                   <Link href={link}>{songName}</Link>
                 </u>{" "}
@@ -63,6 +65,7 @@ const Home: NextPage<Props> = (props) => {
                   size={25}
                   className="hidden mr-2 text-green-400 md:inline md:ml-1"
                 />
+                </span>
               </span>
             ) : (
               <span>{songName}</span>
