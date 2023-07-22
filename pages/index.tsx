@@ -7,6 +7,7 @@ import { FaSpotify, FaMusic } from "react-icons/fa";
 import { GetServerSideProps, NextPage } from "next";
 import { Timeline } from "../components/timeline";
 import { Skills } from "../components/skills";
+import { useRouter } from "next/router";
 
 interface Props {
   song: string;
@@ -19,12 +20,14 @@ const Home: NextPage<Props> = (props) => {
   const isPlaying = props.isPlaying;
   const link = props.link;
 
+  const router = useRouter();
+
   return (
     <>
       <div className="flex flex-col items-center justify-center">
         <div className="flex items-center justify-center h-screen md:mt-16 md:flex-col md:justify-start">
           <div className="flex flex-col items-center justify-center mr-12 md:mr-0 md:mb-6">
-            <h1 className="py-1 mb-4 font-mono text-sm text-gray-200 duration-150 border-b-4 border-gray-600 hover:cursor-pointer hover:border-green-500 hover:-translate-y-2">
+            <h1 onClick={async () => await router.push("/resume.pdf")} className="py-1 mb-4 font-mono text-sm text-gray-200 duration-150 border-b-4 border-gray-600 hover:cursor-pointer hover:border-green-500 hover:-translate-y-2">
               view my resume!
             </h1>
             <Image
