@@ -17,68 +17,84 @@ import {
   SiGraphql,
   SiDocker,
 } from "react-icons/si";
-import { BiLogoGoLang, BiLogoJava } from "react-icons/bi";
+import { BiLogoGoLang, BiLogoJava,  } from "react-icons/bi";
 
 const skills = [
   {
     name: "Typescript",
     icon: <SiTypescript size={65} />,
     year: "2022",
-    color: "border-cyan-600",
+    borderColor: "border-[#007acc]",
+    textColor: "text-[#3178C6]"
   },
   {
     name: "Go",
     icon: <BiLogoGoLang size={65} />,
     year: "2021",
-    color: "border-cyan-400",
+    borderColor: "border-[#29BEB0]",
+    textColor: "text-[#29BEB0]"
+  },
+  {
+    name: "C",
+    year: "2023",
+    borderColor: "border-zinc-600",
+    textColor: "text-[#29BEB0]"
   },
   {
     name: "Python",
     icon: <SiPython size={65} />,
     year: "2020",
-    color: "border-cyan-500",
+    borderColor: "border-[#4B8BBE]",
+    textColor: "text-[#FFD43B]"
   },
   {
     name: "Javascript",
     icon: <SiJavascript size={65} />,
     year: "2021",
-    color: "border-yellow-400",
+    borderColor: "border-[#F0DB4F]",
+    textColor: "text-[#F0DB4F]"
   },
   {
     name: "Java",
     icon: <BiLogoJava size={65} />,
     year: "2020",
-    color: "border-orange-500",
+    borderColor: "border-[#f89820]",
+    textColor: "text-[#5382a1]"
   },
   {
     name: "Node.js",
     icon: <SiNodedotjs size={65} />,
     year: "2021",
-    color: "border-green-400",
+    borderColor: "border-green-400",
+    textColor: "text-[#3c873a]",
   },
   {
     name: "Arduino",
     icon: <SiArduino size={65} />,
     year: "2020",
-    color: "border-cyan-300",
+    borderColor: "border-[#4fccf3]",
+    textColor: "text-[#29BEB0]"
   },
   {
     name: "PostgreSQL",
     icon: <SiPostgresql size={65} />,
     year: "2021",
-    color: "border-blue-400",
+    borderColor: "border-[#0064a5]",
+    textColor: "text-[#008bb9]"
   },
   {
     name: "HTML",
     icon: <SiHtml5 size={65} />,
     year: "2020",
-    color: "border-orange-400",
+    borderColor: "border-[#FF5733]",
+    textColor: "text-[#FF5733]"
   },
   {
     name: "CSS",
     icon: <SiCss3 size={65} />,
     year: "2020",
-    color: "border-cyan-400",
+    borderColor: "border-[#264de4]",
+    textColor: "text-[#2965f1]"
   },
 ];
 
@@ -136,21 +152,23 @@ const frameworks = [
 export const Skills: React.FC = () => {
   return (
     <div className="w-full h-full px-16 mt-8 md:px-0 pb-14">
-      <div className="flex items-end justify-center">
+      <div className="flex flex-col items-end justify-center">
         <h1 className="inline-block px-2 py-2 mb-12 ml-auto font-mono text-2xl font-bold text-right border-b-4 md:py-3 md:text-xl md:text-center border-b-cyan-400">
           skills!
         </h1>
       </div>
-      <h2 className="mb-6 text-3xl">Languages</h2>
-      <div className="grid grid-cols-2 gap-12 mb-10 md:grid-cols-1">
+
+      <div className="grid grid-cols-3 gap-12 mb-10 md:grid-cols-1">
         {skills.map((skill, i) => (
           <div
             key={i}
-            className={`px-10 py-6 border-2 rounded-3xl ${skill.color}`}
+            className={`px-10 pt-8 pb-8 flex border-4 rounded-2xl ${skill.borderColor}`}
           >
-            <h1 className="mb-3 text-5xl md:text-2xl">{skill.name}</h1>
-            <span className="">{skill.year}</span>
-            <div className="mt-4">{skill.icon}</div>
+            <div className="mr-auto">
+              <h1 className="mb-3 text-3xl md:text-2xl">{skill.name}</h1>
+              <span className="">{skill.year}</span>
+            </div>
+            <div className={`mt-4 ${skill.textColor}`}>{skill.icon}</div>
           </div>
         ))}
       </div>
@@ -159,7 +177,7 @@ export const Skills: React.FC = () => {
         {frameworks.map((skill, i) => (
           <div
             key={i}
-            className={`px-10 py-6 border-2 rounded-3xl ${skill.color}`}
+            className={`px-10 py-6 border-4 rounded-3xl ${skill.color}`}
           >
             <h1 className="mb-3 text-5xl md:text-2xl">{skill.name}</h1>
             <span className="">{skill.year}</span>
