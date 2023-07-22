@@ -17,7 +17,7 @@ import {
   SiGraphql,
   SiDocker,
 } from "react-icons/si";
-import { BiLogoGoLang, BiLogoJava,  } from "react-icons/bi";
+import { BiLogoGoLang, BiLogoJava } from "react-icons/bi";
 
 const skills = [
   {
@@ -25,41 +25,34 @@ const skills = [
     icon: <SiTypescript size={65} />,
     year: "2022",
     borderColor: "border-[#007acc]",
-    textColor: "text-[#3178C6]"
+    textColor: "text-[#3178C6]",
   },
   {
     name: "Go",
     icon: <BiLogoGoLang size={65} />,
     year: "2021",
     borderColor: "border-[#29BEB0]",
-    textColor: "text-[#29BEB0]"
+    textColor: "text-[#29BEB0]",
   },
   {
     name: "C",
     year: "2023",
     borderColor: "border-zinc-600",
-    textColor: "text-[#29BEB0]"
+    textColor: "text-[#29BEB0]",
   },
   {
     name: "Python",
     icon: <SiPython size={65} />,
     year: "2020",
     borderColor: "border-[#4B8BBE]",
-    textColor: "text-[#FFD43B]"
-  },
-  {
-    name: "Javascript",
-    icon: <SiJavascript size={65} />,
-    year: "2021",
-    borderColor: "border-[#F0DB4F]",
-    textColor: "text-[#F0DB4F]"
+    textColor: "text-[#FFD43B]",
   },
   {
     name: "Java",
     icon: <BiLogoJava size={65} />,
     year: "2020",
     borderColor: "border-[#f89820]",
-    textColor: "text-[#5382a1]"
+    textColor: "text-[#5382a1]",
   },
   {
     name: "Node.js",
@@ -73,28 +66,28 @@ const skills = [
     icon: <SiArduino size={65} />,
     year: "2020",
     borderColor: "border-[#4fccf3]",
-    textColor: "text-[#29BEB0]"
+    textColor: "text-[#29BEB0]",
   },
   {
     name: "PostgreSQL",
     icon: <SiPostgresql size={65} />,
     year: "2021",
     borderColor: "border-[#0064a5]",
-    textColor: "text-[#008bb9]"
+    textColor: "text-[#008bb9]",
   },
   {
     name: "HTML",
     icon: <SiHtml5 size={65} />,
     year: "2020",
     borderColor: "border-[#FF5733]",
-    textColor: "text-[#FF5733]"
+    textColor: "text-[#FF5733]",
   },
   {
     name: "CSS",
     icon: <SiCss3 size={65} />,
     year: "2020",
     borderColor: "border-[#264de4]",
-    textColor: "text-[#2965f1]"
+    textColor: "text-[#2965f1]",
   },
 ];
 
@@ -104,6 +97,11 @@ const frameworks = [
     icon: <SiNextdotjs size={65} />,
     year: "2021",
     color: "",
+  },
+  {
+    name: "TRPC",
+    year: "2023",
+    color: "border-cyan-600",
   },
   {
     name: "TailwindCSS",
@@ -152,8 +150,8 @@ const frameworks = [
 export const Skills: React.FC = () => {
   return (
     <div className="w-full h-full px-16 mt-8 md:px-0 pb-14">
-      <div className="flex flex-col items-end justify-center">
-        <h1 className="inline-block px-2 py-2 mb-12 ml-auto font-mono text-2xl font-bold text-right border-b-4 md:py-3 md:text-xl md:text-center border-b-cyan-400">
+      <div className="flex flex-col items-end justify-center md:items-center">
+        <h1 className="inline-block px-2 py-2 mb-12 ml-auto font-mono text-2xl font-bold text-right border-b-4 md:w-full md:mb-16 md:px-2 md:mx-0 md:block md:py-3 md:text-xl md:text-center border-b-cyan-400">
           skills!
         </h1>
       </div>
@@ -162,25 +160,31 @@ export const Skills: React.FC = () => {
         {skills.map((skill, i) => (
           <div
             key={i}
-            className={`px-10 pt-8 pb-8 flex border-4 rounded-2xl ${skill.borderColor}`}
+            className={`px-10 py-8 flex border-4 rounded-2xl ${skill.borderColor}`}
           >
             <div className="mr-auto">
               <h1 className="mb-3 text-3xl md:text-2xl">{skill.name}</h1>
-              <span className="">{skill.year}</span>
+              <span className="font-mono">{skill.year}</span>
             </div>
             <div className={`mt-4 ${skill.textColor}`}>{skill.icon}</div>
           </div>
         ))}
       </div>
-      <h2 className="my-6 text-3xl">Frameworks/Tools</h2>
-      <div className="grid grid-cols-2 gap-12 mb-10 md:grid-cols-1">
+      <div className="flex flex-col items-end justify-center">
+        <h1 className="inline-block px-2 py-2 mb-12 ml-auto font-mono text-2xl font-bold text-right md:py-3 md:text-xl md:text-center ">
+          frameworks/tools!
+        </h1>
+      </div>
+      <div className="grid grid-cols-3 gap-12 mb-10 md:grid-cols-1">
         {frameworks.map((skill, i) => (
           <div
             key={i}
-            className={`px-10 py-6 border-4 rounded-3xl ${skill.color}`}
+            className={`px-10 flex py-8 border-4 rounded-2xl ${skill.color}`}
           >
-            <h1 className="mb-3 text-5xl md:text-2xl">{skill.name}</h1>
-            <span className="">{skill.year}</span>
+            <div className="mr-auto">
+              <h1 className="mb-3 text-3xl md:text-2xl">{skill.name}</h1>
+              <span className="font-mono">{skill.year}</span>
+            </div>
             <div className="mt-4">{skill.icon}</div>
           </div>
         ))}
