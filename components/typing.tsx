@@ -5,11 +5,14 @@ export const Typing: React.FC<{ phrases: string[] }> = ({ phrases }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [backwards, setBackwards] = useState(false);
   let text = phrases[0];
-  const delay = 275;
+  const delay = 300;
 
   useEffect(() => {
     if (currentIndex === text.length - 1) setBackwards(true);
-    if (currentIndex === 1) setBackwards(false);
+    if (currentIndex === 1) {
+      setBackwards(false);
+      text = phrases[1];
+    }
 
     if (!backwards) {
       const timeout = setTimeout(() => {
@@ -24,7 +27,7 @@ export const Typing: React.FC<{ phrases: string[] }> = ({ phrases }) => {
           prevText.substring(0, prevText.length - 1)
         );
         setCurrentIndex((prevIndex) => prevIndex - 1);
-      }, delay);
+      }, 50);
 
       return () => clearTimeout(timeout);
     }

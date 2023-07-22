@@ -49,8 +49,8 @@ export const Timeline: React.FC = () => {
   return (
     <div className="w-full h-full px-16 mx-auto md:px-0 pb-14">
       <div className="relative flex-wrap h-full p-10 overflow-hidden md:px-4 md:flex md:flex-col">
-        <h1 className="inline-block px-2 py-2 mb-12 text-4xl font-bold border-b-4 md:py-3 md:text-center border-b-pink-600">
-          Experiences
+        <h1 className="inline-block px-2 py-2 mb-12 font-mono text-2xl font-bold border-b-4 md:py-3 md:text-center border-b-pink-600">
+          cool things i&apos;ve done!
         </h1>
         <div className="absolute h-full border border-gray-200 border-2-2 border-opacity-20 left-1/2 md:hidden"></div>
 
@@ -75,7 +75,7 @@ export const Timeline: React.FC = () => {
               <Link key={i} href={experience.link} passHref>
                 <div className="relative z-30 px-5 py-4 hover:cursor-pointer rounded-xl bg-zinc-900">
                   <h3
-                    className={`inline-block md:pl-0 py-1 mb-2 text-2xl font-bold text-white border-b-2 ${
+                    className={`inline-block font-mono md:pl-0 py-1 mb-2 text-2xl font-bold text-white border-b-2 ${
                       i % 2 != 0
                         ? `pr-2 border-b-pink-600`
                         : `pl-2 border-b-cyan-400`

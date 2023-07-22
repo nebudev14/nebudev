@@ -22,6 +22,9 @@ const Home: NextPage<Props> = (props) => {
     <div className="flex flex-col items-center justify-center">
       <div className="flex items-center justify-center h-screen md:mt-16 md:flex-col md:justify-start">
         <div className="flex flex-col items-center justify-center mr-12 md:mr-0 md:mb-6">
+          <h1 className="py-1 mb-4 font-mono text-sm text-gray-200 duration-150 border-b-4 border-gray-600 hover:cursor-pointer hover:border-green-500 hover:-translate-y-2">
+            view my resume!
+          </h1>
           <Image
             src="/warren.jpeg"
             alt="warren"
@@ -29,9 +32,6 @@ const Home: NextPage<Props> = (props) => {
             height={275}
             className="rounded-3xl"
           />
-          <h1 className="mt-4 font-mono text-sm ">
-            me at a <span className="text-green-400">razer</span> store!
-          </h1>
         </div>
         <div className="w-1/2 md:w-full">
           <Social />
@@ -80,17 +80,15 @@ const Home: NextPage<Props> = (props) => {
             )}
           </div>
         </div>
-
       </div>
       <h1 className="font-mono text-lg text-gray-400 mb-28 md:-mt-64 md:hidden">
         <span className="md:hidden">business inquiries? reach me at</span>{" "}
-        <span className="font-extrabold text-gray-300">hi [at] wyun [dot] dev</span>
+        <span className="font-extrabold text-gray-300">
+          hi [at] wyun [dot] dev
+        </span>
       </h1>
 
-
-      <div>
-        {/* <Timeline /> */}
-      </div>
+      <div><Timeline /></div>
     </div>
   );
 };
