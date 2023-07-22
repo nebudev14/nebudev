@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
   return (
     <Page>
-      <Header />
+      {/* <Header /> */}
       <div className="flex-row text-white bg-black">
         <AnimatePresence exitBeforeEnter />
           <motion.div

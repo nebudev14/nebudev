@@ -49,7 +49,7 @@ export const Timeline: React.FC = () => {
   return (
     <div className="w-full h-full px-16 mx-auto md:px-0 pb-14">
       <div className="relative flex-wrap h-full p-10 overflow-hidden md:px-4 md:flex md:flex-col">
-        <h1 className="inline-block px-2 py-2 mb-12 font-mono text-2xl font-bold border-b-4 md:py-3 md:text-center border-b-pink-600">
+        <h1 className="inline-block px-2 py-2 mb-12 font-mono text-2xl font-bold border-b-4 md:py-3 md:text-xl md:text-center border-b-pink-600">
           cool things i&apos;ve done!
         </h1>
         <div className="absolute h-full border border-gray-200 border-2-2 border-opacity-20 left-1/2 md:hidden"></div>
@@ -70,8 +70,8 @@ export const Timeline: React.FC = () => {
               <h1 className="mx-auto text-lg font-semibold text-white"></h1>
             </div>
 
-            <div className="relative order-1 w-5/12 shadow-xl md:w-full rounded-xl bg-zinc-900 group ">
-              <div className="absolute z-10 order-1 p-1 transition duration-200 rounded-sm opacity-75 -inset-0.5 bg-gradient-to-r to-zinc-800 from-zinc-800 blur-xl group-hover:opacity-100 group-hover:duration-200 animate-tilt" />
+            <div className="relative order-1 w-5/12 border-4 rounded-lg border-zinc-800 md:w-full bg-zinc-900 group ">
+              <div className="absolute z-10 order-1 p-1 transition duration-200 rounded-sm opacity-75 -inset-0.5  to-zinc-800 from-zinc-800 blur-xl group-hover:opacity-100 group-hover:duration-200 animate-tilt" />
               <Link key={i} href={experience.link} passHref>
                 <div className="relative z-30 px-5 py-4 hover:cursor-pointer rounded-xl bg-zinc-900">
                   <h3
@@ -86,7 +86,7 @@ export const Timeline: React.FC = () => {
                   <h3 className="mb-2 text-lg text-gray-400">
                     {experience.role}
                   </h3>
-                  <p className="mb-4 text-base font-medium leading-snug tracking-wide text-gray-200 text-opacity-100">
+                  <p className="mb-4 text-base font-medium leading-snug tracking-wide text-gray-300 text-opacity-100">
                     {experience.desc}
                   </p>
                   <p className="text-sm text-gray-400">{experience.time}</p>
