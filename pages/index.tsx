@@ -31,12 +31,12 @@ const Home: NextPage<Props> = (props) => {
           content="I'm Warren Yun! I do stuff from robotics, to software engineering, to embedded security and a little more."
           key="desc"
         />
-        <link rel="shortcut icon" href="https://www.wyun.dev/warrenog.png" />
+        <link rel="shortcut icon" href="/warren.jpeg" />
         <meta
           property="og:description"
           content="I'm Warren! I like to mess around with robotics, full-stack web development, embedded security, and a whole bunch of other things that may or may not be tanegntially related."
         />
-        <meta property="og:image" content={`/warrenog.png`} />
+        <meta property="og:image" content="https://www.wyun.dev/warrenog.png" />
       </Head>
       <div className="flex flex-col items-center justify-center">
         <div className="flex items-center justify-center h-screen md:mt-16 md:flex-col md:justify-start">
