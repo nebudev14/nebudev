@@ -37,6 +37,22 @@ const Home: NextPage<Props> = (props) => {
           content="I'm Warren! I like to mess around with robotics, full-stack web development, embedded security, and a whole bunch of other things that may or may not be tanegntially related."
         />
         <meta property="og:image" content="https://www.wyun.dev/warrenog.png" />
+        <meta property="og:url" content="https://www.wyun.dev/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Warren Yun - Personal Website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="wyun.dev" />
+        <meta property="twitter:url" content="https://www.wyun.dev/" />
+        <meta name="twitter:title" content="Warren Yun - Personal Website" />
+        <meta
+          name="twitter:description"
+          content="I'm Warren! I like to mess around with robotics, full-stack web development, embedded security, and a whole bunch of other things that may or may not be tanegntially related."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.wyun.dev/warrenog.png"
+        />
       </Head>
       <div className="flex flex-col items-center justify-center">
         <div className="flex items-center justify-center h-screen md:mt-16 md:flex-col md:justify-start">
