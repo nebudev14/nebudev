@@ -8,26 +8,43 @@ import { GetServerSideProps, NextPage } from "next";
 import { Timeline } from "../components/timeline";
 import { Skills } from "../components/skills";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 interface Props {
   song: string;
   isPlaying: boolean;
   link: string;
+  domain: string;
 }
 
 const Home: NextPage<Props> = (props) => {
-  const songName = props.song;
-  const isPlaying = props.isPlaying;
-  const link = props.link;
+  const { song, isPlaying, link, domain } = props;
 
   const router = useRouter();
 
   return (
     <>
+      <Head>
+        <title>Warren Yun - Personal Website</title>
+        <meta
+          name="description"
+          content="I'm Warren Yun! I do stuff from robotics, to software engineering, to embedded security and a little more."
+          key="desc"
+        />
+        <link rel="shortcut icon" href="/warren.jpeg" />
+        <meta
+          property="og:description"
+          content="I'm Warren! I like to mess around with robotics, full-stack web development, embedded security, and a whole bunch of other things that may or may not be tanegntially related."
+        />
+        <meta property="og:image" content={`${domain}/warrenog.png`} />
+      </Head>
       <div className="flex flex-col items-center justify-center">
         <div className="flex items-center justify-center h-screen md:mt-16 md:flex-col md:justify-start">
           <div className="flex flex-col items-center justify-center mr-12 md:mr-0 md:mb-6">
-            <h1 onClick={async () => await router.push("/resume.pdf")} className="py-1 mb-4 font-mono text-sm text-gray-200 duration-150 border-b-4 border-gray-600 hover:cursor-pointer hover:border-green-500 hover:-translate-y-2">
+            <h1
+              onClick={async () => await router.push("/resume.pdf")}
+              className="py-1 mb-4 font-mono text-sm text-gray-200 duration-150 border-b-4 border-gray-600 hover:cursor-pointer hover:border-green-500 hover:-translate-y-2"
+            >
               view my resume!
             </h1>
             <Image
@@ -67,7 +84,7 @@ const Home: NextPage<Props> = (props) => {
                   </div>
                   <span>
                     <u className="font-mono text-green-400">
-                      <Link href={link}>{songName}</Link>
+                      <Link href={link}>{song}</Link>
                     </u>{" "}
                     <FaSpotify
                       size={25}
@@ -76,7 +93,7 @@ const Home: NextPage<Props> = (props) => {
                   </span>
                 </span>
               ) : (
-                <span>{songName}</span>
+                <span>{song}</span>
               )}
 
               {isPlaying ? (
@@ -129,6 +146,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     return {
       props: {
+        domain: process.env.DOMAIN as string,
         isPlaying,
         song,
         link,
