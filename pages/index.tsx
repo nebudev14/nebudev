@@ -15,11 +15,10 @@ interface Props {
   song: string;
   isPlaying: boolean;
   link: string;
-  domain: string;
 }
 
 const Home: NextPage<Props> = (props) => {
-  const { song, isPlaying, link, domain } = props;
+  const { song, isPlaying, link } = props;
 
   const router = useRouter();
 
@@ -32,12 +31,12 @@ const Home: NextPage<Props> = (props) => {
           content="I'm Warren Yun! I do stuff from robotics, to software engineering, to embedded security and a little more."
           key="desc"
         />
-        <link rel="shortcut icon" href="/warren.jpeg" />
+        <link rel="shortcut icon" href="https://www.wyun.dev/warrenog.png" />
         <meta
           property="og:description"
           content="I'm Warren! I like to mess around with robotics, full-stack web development, embedded security, and a whole bunch of other things that may or may not be tanegntially related."
         />
-        <meta property="og:image" content={`${domain}${MetaImage}`} />
+        <meta property="og:image" content={`/warrenog.png`} />
       </Head>
       <div className="flex flex-col items-center justify-center">
         <div className="flex items-center justify-center h-screen md:mt-16 md:flex-col md:justify-start">
@@ -147,7 +146,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     return {
       props: {
-        domain: process.env.DOMAIN as string,
         isPlaying,
         song,
         link,
