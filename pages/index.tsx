@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MetaImage from "../public/warrenog.png";
 
 import { Social } from "../components/social";
 import axios from "axios";
@@ -36,7 +37,7 @@ const Home: NextPage<Props> = (props) => {
           property="og:description"
           content="I'm Warren! I like to mess around with robotics, full-stack web development, embedded security, and a whole bunch of other things that may or may not be tanegntially related."
         />
-        <meta property="og:image" content={`${domain}/warrenog.png`} />
+        <meta property="og:image" content={`${domain}${MetaImage}`} />
       </Head>
       <div className="flex flex-col items-center justify-center">
         <div className="flex items-center justify-center h-screen md:mt-16 md:flex-col md:justify-start">
