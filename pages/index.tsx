@@ -31,7 +31,7 @@ const Home: NextPage<Props> = (props) => {
           content="I'm Warren Yun! I do stuff from robotics, to software engineering, to embedded security and a little more."
           key="desc"
         />
-        <link rel="shortcut icon" href="/warren.jpeg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <meta
           property="og:description"
           content="I'm Warren! I like to mess around with robotics, full-stack web development, embedded security, and a whole bunch of other things that may or may not be tanegntially related."
