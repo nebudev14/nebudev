@@ -10,24 +10,9 @@ const socials = [
     link: "https://github.com/NebuDev14",
   },
   {
-    alt: "insta",
-    img: <BsInstagram className="text-5xl md:text-3xl" />,
-    link: "https://www.instagram.com/nebudev14/",
-  },
-  {
-    alt: "twitter",
-    img: <BsTwitter className="text-5xl md:text-3xl" />,
-    link: "https://twitter.com/nebudev14",
-  },
-  {
     alt: "linkedin",
     img: <BsLinkedin className="text-5xl md:text-3xl" />,
     link: "https://www.linkedin.com/in/warren-yun-240984216/",
-  },
-  {
-    alt: "polywork",
-    img: <SiPolywork className="text-5xl md:text-3xl" />,
-    link: "https://www.polywork.com/nebudev14",
   },
   {
     alt: "email",

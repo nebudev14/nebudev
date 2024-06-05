@@ -3,20 +3,6 @@ import Link from "next/link";
 export const Timeline: React.FC = () => {
   const experiences = [
     {
-      name: "Sciborgs",
-      role: "Captain",
-      time: "Nov 2021 - Present",
-      desc: "In my school's FIRST Robotics team, I have a tendency to write software that helps speed up team productivity and convenience. I also end up messing around with Math and Physics from time to time to help control/model funny looking mechanisms. ",
-      link: "https://www.sciborgs1155.org/",
-    },
-    {
-      name: "AtomHacks",
-      role: "Preisdent Emeritus of Programming",
-      time: "Oct 2021 - Present",
-      desc: "I help run my school's annual hackathon! Whether it's developing the website and helping with custom submission software, to directing the committee and helping keep the event in check, hosting a coding event for my school is always fun.",
-      link: "https://atomhacks.org/",
-    },
-    {
       name: "MIT BWSI Embsec",
       role: "Alum | Teacher Assistant",
       time: "July 2022 - Aug 2022 | July 2023 - Aug 2023",
@@ -24,25 +10,18 @@ export const Timeline: React.FC = () => {
       link: "https://beaverworks.ll.mit.edu/CMS/bw/bwsi",
     },
     {
-      name: "Steamworks",
-      role: "Mentor | Volunteer",
-      time: "Oct 2023 - Mar 2023",
-      desc: "For the 2022-2023 FIRST season, I helped mentor FTC teams in software and control, as well as volunteered at several FIRST competitions!",
-      link: "https://www.steamworksrobotics.com/",
+      name: "MITRE",
+      role: "Embedded Security Intern",
+      time: "June 2024 - August 2024",
+      desc: "At MITRE. I'll be learning reverse software engineering through projects while also being an instructor for the embedded security course @ MIT",
+      link: "https://beaverworks.ll.mit.edu/CMS/bw/bwsi",
     },
     {
-      name: "Lumiere",
-      role: "Technology Product Manager",
-      time: "Nov 2021 - Jan 2022",
-      desc: "A media publication platform targeted towards STEM creators! Used Next.Js to add convenient posting features + core functionalities, and TailwindCSS to improve UI/UX.",
-      link: "https://github.com/project-lumiere",
-    },
-    {
-      name: "The Orpheus Show",
-      role: "Co-Host and Development",
-      time: "Aug 2021 - Sep 2021",
-      desc: "A podcast from members of Hack Club that focused on the stories of other members and their journies as a hacker. Co-hosted podcast episodes, assisted with operations, and developed the website using Next.js and CSS.",
-      link: "https://podcast.hackclub.com/",
+      name: "MLH Fellowship w/ Meta",
+      role: "Production Engineering Fellow",
+      time: "June 2024 - August 2024",
+      desc: "I'll be learning DevOps and Site Reliability Engineering through MLH's fellowship in the summer. I'll be working with Meta engineerings and contributing to open source projects to develop these skills!",
+      link: "https://beaverworks.ll.mit.edu/CMS/bw/bwsi",
     },
   ];
 
@@ -50,7 +29,7 @@ export const Timeline: React.FC = () => {
     <div className="w-full h-full px-16 mx-auto md:px-0 pb-14">
       <div className="relative flex-wrap h-full p-10 overflow-hidden md:px-4 md:flex md:flex-col">
         <h1 className="inline-block px-2 py-2 mb-12 font-mono text-2xl font-bold border-b-4 md:py-3 md:text-xl md:text-center border-b-pink-600">
-          cool things i&apos;ve done!
+          what i&apos;m up to..
         </h1>
         <div className="absolute h-full border border-gray-200 border-2-2 border-opacity-20 left-1/2 md:hidden"></div>
 

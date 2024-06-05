@@ -10,6 +10,7 @@ import { Timeline } from "../components/timeline";
 import { Skills } from "../components/skills";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import MetaData from "../components/metadata";
 
 interface Props {
   song: string;
@@ -24,36 +25,7 @@ const Home: NextPage<Props> = (props) => {
 
   return (
     <>
-      <Head>
-        <title>Warren Yun - Personal Website</title>
-        <meta
-          name="description"
-          content="I'm Warren Yun! I do stuff from robotics, to software engineering, to embedded security and a little more."
-          key="desc"
-        />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <meta
-          property="og:description"
-          content="I'm Warren! I like to mess around with robotics, full-stack web development, embedded security, and a whole bunch of other things that may or may not be tanegntially related."
-        />
-        <meta property="og:image" content="https://www.wyun.dev/warrenog.png" />
-        <meta property="og:url" content="https://www.wyun.dev/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Warren Yun - Personal Website" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="wyun.dev" />
-        <meta property="twitter:url" content="https://www.wyun.dev/" />
-        <meta name="twitter:title" content="Warren Yun - Personal Website" />
-        <meta
-          name="twitter:description"
-          content="I'm Warren! I like to mess around with robotics, full-stack web development, embedded security, and a whole bunch of other things that may or may not be tanegntially related."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.wyun.dev/warrenog.png"
-        />
-      </Head>
+      <MetaData/>
       <div className="flex flex-col items-center justify-center">
         <div className="flex items-center justify-center h-screen md:mt-16 md:flex-col md:justify-start">
           <div className="flex flex-col items-center justify-center mr-12 md:mr-0 md:mb-6">
@@ -81,7 +53,7 @@ const Home: NextPage<Props> = (props) => {
             <h1 className="inline-block m-0 font-mono text-4xl md:text-lg ">
               I&apos;m an avid maker from New York interested in{" "}
               <span className="hover:text-yellow-400">robotics</span>,{" "}
-              <span className="hover:text-purple-500">web development</span>,
+              <span className="hover:text-purple-500">full-stack development</span>,
               and <span className="hover:text-cyan-700">embedded security</span>
               .
             </h1>
@@ -130,9 +102,6 @@ const Home: NextPage<Props> = (props) => {
         <div>
           <Timeline />
         </div>
-      </div>
-      <div>
-        <Skills />
       </div>
     </>
   );
