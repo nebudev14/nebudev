@@ -41,13 +41,13 @@ const Home: NextPage<Props> = (props) => {
           className=""
         />
         <StarsBackground
-          starDensity={0.0006}
+          starDensity={0.0020}
           twinkleProbability={0.85}
           className=""
         />
-        <div className="grid grid-cols-2">
-          <div className="z-10 flex items-center justify-center h-screen md:mt-16 md:flex-col md:justify-start">
-            <div className="pl-20 md:w-full">
+        <div className="grid grid-cols-2 md:grid-cols-1">
+          <div className="z-10 flex items-center justify-center h-screen md:flex-col">
+            <div className="pl-20 md:pl-0 md:w-full">
               <Social />
 
               <div className="inline-flex font-semibold text-8xl md:text-3xl font-open">
@@ -65,7 +65,7 @@ const Home: NextPage<Props> = (props) => {
                       "a hackathon addict",
                       "a sleep-deprived engineer",
                       "a software developer",
-                      "a Peach Nectarine Redbull enthusiast"
+                      "a Redbull enthusiast"
                     ]}
                   />
                 </span>
