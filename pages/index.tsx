@@ -38,18 +38,15 @@ const Home: NextPage<Props> = (props) => {
           starHeight={5}
           minDelay={2000}
           maxDelay={3000}
-          className=""
         />
         <StarsBackground
-          starDensity={0.002}
-          twinkleProbability={0.85}
-          className=""
+          starDensity={0.0010}
+          twinkleProbability={0.6}
         />
-        <div className="grid grid-cols-2 md:grid-cols-1">
+        <div className="grid grid-cols-2 px-8 md:grid-cols-1 md:">
           <div className="z-10 flex items-center justify-center h-screen md:flex-col">
             <div className="pl-20 md:pl-0 md:w-full">
               <Social />
-
               <div className="inline-flex font-semibold text-8xl md:text-3xl font-open">
                 <span className="mr-5 text-left md:mr-3">I&apos;m</span>
                 <span className="mr-5 text-pink-600 md:mr-3 ">Warren</span>
