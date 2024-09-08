@@ -12,16 +12,9 @@ export const Page: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     exit: { opacity: 0, x: 0, y: -100 },
   };
 
-  // Router.onRouteChangeStart = (url) => {
-  //   setLoading(true);
-  // };
-
-  // Router.onRouteChangeComplete = (url) => {
-  //   setLoading(false);
-  // };
 
   return (
-    <div className="px-8 md:flex md:flex-col">
+    <div className="md:flex md:flex-col">
       {loading ? (
         <div className="">
           <AnimatePresence />

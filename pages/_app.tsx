@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Header } from "../components/Layouts/header";
 import { Page } from "../components/Layouts/page";
 import { AppProps } from "next/app";
+import { Nav } from "../components/nav";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
 
@@ -13,9 +14,11 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   };
 
   return (
+    
     <Page>
       {/* <Header /> */}
       <div className="flex-row text-white bg-black">
+      <Nav />
         <AnimatePresence mode="wait" />
           <motion.div
             initial="hidden"
@@ -25,6 +28,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             transition={({ duration: 0.4 })}
             key={router.asPath}
           >
+
             <Component {...pageProps} />
           </motion.div>
       </div>
