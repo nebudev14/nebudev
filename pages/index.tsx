@@ -11,6 +11,8 @@ import { Skills } from "../components/skills";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import MetaData from "../components/metadata";
+import { StarsBackground } from "../components/stars-background";
+import { ShootingStars } from "../components/shooting-stars";
 
 interface Props {
   song: string;
@@ -28,36 +30,21 @@ const Home: NextPage<Props> = (props) => {
       <MetaData/>
       <div className="flex flex-col items-center justify-center">
         <div className="flex items-center justify-center h-screen md:mt-16 md:flex-col md:justify-start">
-          <div className="flex flex-col items-center justify-center mr-12 md:mr-0 md:mb-6">
-            <h1
-              onClick={async () => await router.push("/resume.pdf")}
-              className="py-1 mb-4 font-mono text-sm text-gray-200 duration-150 border-b-4 border-gray-600 hover:cursor-pointer hover:border-green-500 hover:-translate-y-2"
-            >
-              view my resume!
-            </h1>
-            <Image
-              src="/warren.jpeg"
-              alt="warren"
-              width={275}
-              height={275}
-              className="rounded-3xl"
-            />
-          </div>
           <div className="w-1/2 md:w-full">
             <Social />
-            <div className="inline-flex text-8xl md:text-3xl">
+            <div className="inline-flex font-semibold text-8xl md:text-3xl font-open">
               <span className="mr-5 text-left md:mr-3">I&apos;m</span>
-              <span className="mr-5 text-pink-600 md:mr-3">Warren</span>
+              <span className="mr-5 text-pink-600 md:mr-3 ">Warren</span>
               <span className="text-cyan-400">Yun.</span>
             </div>
-            <h1 className="inline-block m-0 font-mono text-4xl md:text-lg ">
+            <h1 className="inline-block m-0 text-4xl md:text-lg text-zinc-500 font-bricolage ">
               I&apos;m an avid maker from New York interested in{" "}
-              <span className="hover:text-yellow-400">robotics</span>,{" "}
+              <span className="">robotics</span>,{" "}
               <span className="hover:text-purple-500">full-stack development</span>,
               and <span className="hover:text-cyan-700">embedded security</span>
               .
             </h1>
-            <div className="flex flex-row items-center justify-start mt-3 md:text-sm md:flex-col md:items-start">
+            <div className="flex flex-row items-center justify-start mt-3 font-bricolage text-zinc-400 md:text-sm md:flex-col md:items-start">
               <FaSpotify size={30} className="mr-2 text-green-400 md:hidden" />
               {isPlaying ? (
                 <FaMusic size={20} className="mr-2 text-purple-500 md:hidden" />
@@ -91,6 +78,8 @@ const Home: NextPage<Props> = (props) => {
               )}
             </div>
           </div>
+          <ShootingStars starWidth={15} trailColor="#db2777" starColor="#0891b2" minSpeed={8} maxSpeed={15} starHeight={5} minDelay={2000} maxDelay={3000} />
+          <StarsBackground starDensity={0.00060} twinkleProbability={0.85} />
         </div>
         <h1 className="font-mono text-lg text-gray-400 mb-28 ">
           <span className="md:hidden">business inquiries? reach me at</span>{" "}

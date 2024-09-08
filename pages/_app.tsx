@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     <Page>
       {/* <Header /> */}
       <div className="flex-row text-white bg-black">
-        <AnimatePresence exitBeforeEnter />
+        <AnimatePresence mode="wait" />
           <motion.div
             initial="hidden"
             animate="enter"

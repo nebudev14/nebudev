@@ -4,7 +4,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+          bricolage: ['Bricolage Grotesque', 'sans-serif'],
+          open: ['Open Sans', 'sans-serif']
+      }
+    },
     screens: {
       '2xl': { max: '1535px' },
       xl: { max: '1279px' },

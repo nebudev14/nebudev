@@ -9,15 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "aceternity-ui": "^0.2.2",
     "axios": "^0.26.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "dotenv": "^16.0.0",
-    "framer-motion": "^6.2.8",
+    "framer-motion": "^11.5.4",
+    "lucide-react": "^0.439.0",
     "next": "^12.2.5",
     "node-spotify-api": "^1.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "4.10.1",
-    "spotify-web-api-node": "^5.0.2"
+    "spotify-web-api-node": "^5.0.2",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "18.0.0",
