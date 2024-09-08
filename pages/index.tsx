@@ -41,7 +41,7 @@ const Home: NextPage<Props> = (props) => {
           className=""
         />
         <StarsBackground
-          starDensity={0.0020}
+          starDensity={0.002}
           twinkleProbability={0.85}
           className=""
         />
@@ -65,7 +65,7 @@ const Home: NextPage<Props> = (props) => {
                       "a hackathon addict",
                       "a sleep-deprived engineer",
                       "a software developer",
-                      "a Redbull enthusiast"
+                      "a Redbull enthusiast",
                     ]}
                   />
                 </span>
@@ -123,18 +123,59 @@ const Home: NextPage<Props> = (props) => {
           </div>
         </div>
 
-        <div className="mt-40 text-center">
-          <h1 className="font-mono text-lg text-gray-400 mb-28 ">
-            <span className="md:hidden">business inquiries? reach me at</span>{" "}
-            <span className="font-extrabold text-gray-300">
-              hi [at] wyun [dot] dev
-            </span>
-          </h1>
-        </div>
-
-        <div>
-          <Timeline />
-        </div>
+        <Timeline
+          data={[
+            {
+              title: "2024",
+              content: (
+                <h1 className="text-3xl">
+                  "Lorem ipsum odor amet, consectetuer adipiscing elit.
+                  Ullamcorper fames dapibus venenatis erat tellus fusce sit. Leo
+                  enim viverra habitant fusce adipiscing elit conubia. Dignissim
+                  aliquam justo mauris; nisi lacinia aliquet sollicitudin
+                  adipiscing. Potenti mi placerat sed mollis volutpat facilisi
+                  suscipit nisl. Habitasse platea elementum convallis viverra
+                  magnis, fames cursus? Purus torquent amet efficitur
+                  suspendisse; dignissim placerat felis quis. Taciti fusce vel
+                  proin habitasse pulvinar elit inceptos."
+                </h1>
+              ),
+            },
+            {
+              title: "2023",
+              content: (
+                <h1 className="text-3xl">
+                  "Lorem ipsum odor amet, consectetuer adipiscing elit.
+                  Ullamcorper fames dapibus venenatis erat tellus fusce sit. Leo
+                  enim viverra habitant fusce adipiscing elit conubia. Dignissim
+                  aliquam justo mauris; nisi lacinia aliquet sollicitudin
+                  adipiscing. Potenti mi placerat sed mollis volutpat facilisi
+                  suscipit nisl. Habitasse platea elementum convallis viverra
+                  magnis, fames cursus? Purus torquent amet efficitur
+                  suspendisse; dignissim placerat felis quis. Taciti fusce vel
+                  proin habitasse pulvinar elit inceptos."
+                </h1>
+              ),
+            },
+            {
+              title: "2022",
+              content: (
+                <h1 className="text-3xl">
+                  "Lorem ipsum odor amet, consectetuer adipiscing elit.
+                  Ullamcorper fames dapibus venenatis erat tellus fusce sit. Leo
+                  enim viverra habitant fusce adipiscing elit conubia. Dignissim
+                  aliquam justo mauris; nisi lacinia aliquet sollicitudin
+                  adipiscing. Potenti mi placerat sed mollis volutpat facilisi
+                  suscipit nisl. Habitasse platea elementum convallis viverra
+                  magnis, fames cursus? Purus torquent amet efficitur
+                  suspendisse; dignissim placerat felis quis. Taciti fusce vel
+                  proin habitasse pulvinar elit inceptos."
+                </h1>
+              ),
+            },
+            
+          ]}
+        />
       </div>
     </>
   );

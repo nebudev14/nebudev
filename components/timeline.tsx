@@ -1,79 +1,89 @@
-import Link from "next/link";
+"use client";
+import {
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+  motion,
+} from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 
-export const Timeline: React.FC = () => {
-  const experiences = [
-    {
-      name: "MIT BWSI Embsec",
-      role: "Alum | Teacher Assistant",
-      time: "July 2022 - Aug 2022 | July 2023 - Aug 2023",
-      desc: "In summer of 2022, I was a student at MIT Beaverworks' Embedded Security and Hardware Hacking. Here I learned about embedded systems as well as cryptography, and built a bootloader + firmware updater that securely exchanged data as the final project. As a TA for the 2023 summer, I helped develop slideshow content for students and created the lab submission platform that powers the course.",
-      link: "https://beaverworks.ll.mit.edu/CMS/bw/bwsi",
-    },
-    {
-      name: "MITRE",
-      role: "Embedded Security Intern",
-      time: "June 2024 - August 2024",
-      desc: "At MITRE. I'll be learning reverse software engineering through projects while also being an instructor for the embedded security course @ MIT",
-      link: "https://beaverworks.ll.mit.edu/CMS/bw/bwsi",
-    },
-    {
-      name: "MLH Fellowship w/ Meta",
-      role: "Production Engineering Fellow",
-      time: "June 2024 - August 2024",
-      desc: "I'll be learning DevOps and Site Reliability Engineering through MLH's fellowship in the summer. I'll be working with Meta engineerings and contributing to open source projects to develop these skills!",
-      link: "https://beaverworks.ll.mit.edu/CMS/bw/bwsi",
-    },
-  ];
+interface TimelineEntry {
+  title: string;
+  content: React.ReactNode;
+}
+
+export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    if (ref.current) {
+      const rect = ref.current.getBoundingClientRect();
+      setHeight(rect.height);
+    }
+  }, [ref]);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start 10%", "end 50%"],
+  });
+
+  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
+  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className="w-full h-full px-16 mx-auto md:px-0 pb-14">
-      <div className="relative flex-wrap h-full p-10 overflow-hidden md:px-4 md:flex md:flex-col">
-        <h1 className="inline-block px-2 py-2 mb-12 font-mono text-2xl font-bold border-b-4 md:py-3 md:text-xl md:text-center border-b-pink-600">
-          what i&apos;m up to..
-        </h1>
-        <div className="absolute h-full border border-gray-200 border-2-2 border-opacity-20 left-1/2 md:hidden"></div>
+    <div
+      className="w-full font-sans bg-white dark:bg-neutral-950 md:px-10"
+      ref={containerRef}
+    >
+      <div className="px-4 py-20 mx-auto max-w-7xl md:px-8 lg:px-10">
+        <h2 className="max-w-4xl mb-4 text-lg text-black md:text-4xl dark:text-white">
+          Changelog from my journey
+        </h2>
+        <p className="max-w-sm text-sm text-neutral-700 dark:text-neutral-300 md:text-base">
+          I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s
+          a timeline of my journey.
+        </p>
+      </div>
 
-        {experiences.map((experience, i) => (
+      <div ref={ref} className="relative pb-20 mx-auto max-w-7xl">
+        {data.map((item, index) => (
           <div
-            key={i}
-            className={`flex  md:text-left items-center justify-between mb-8 py-4 right-timeline ${
-              i % 2 == 0 ? `flex-row-reverse text-right` : ``
-            }`}
+            key={index}
+            className="flex justify-start pt-10 md:pt-40 md:gap-10"
           >
-            <div className="order-1 w-5/12 md:hidden"></div>
-            <div
-              className={`z-20 md:hidden flex items-center order-1 w-8 h-8  rounded-full shadow-xl ${
-                i % 2 == 0 ? `bg-pink-600` : `bg-cyan-400`
-              }`}
-            >
-              <h1 className="mx-auto text-lg font-semibold text-white"></h1>
+            <div className="sticky z-40 flex flex-col items-center self-start max-w-xs md:flex-row top-40 lg:max-w-sm md:w-full">
+              <div className="absolute flex items-center justify-center w-10 h-10 bg-white rounded-full left-3 md:left-3 dark:bg-black">
+                <div className="w-4 h-4 p-2 border rounded-full bg-neutral-200 dark:bg-neutral-800 border-neutral-300 dark:border-neutral-700" />
+              </div>
+              <h3 className="hidden text-xl font-bold md:block md:pl-20 md:text-5xl text-neutral-500 dark:text-neutral-500 ">
+                {item.title}
+              </h3>
             </div>
 
-            <div className="relative order-1 w-5/12 border-4 rounded-lg border-zinc-800 md:w-full bg-zinc-900 group ">
-              <div className="absolute z-10 order-1 p-1 transition duration-200 rounded-sm opacity-75 -inset-0.5  to-zinc-800 from-zinc-800 blur-xl group-hover:opacity-100 group-hover:duration-200 animate-tilt" />
-              <Link key={i} href={experience.link} passHref>
-                <div className="relative z-30 px-5 py-4 hover:cursor-pointer rounded-xl bg-zinc-900">
-                  <h3
-                    className={`inline-block font-mono md:pl-0 py-1 mb-2 text-2xl font-bold text-white border-b-2 ${
-                      i % 2 != 0
-                        ? `pr-2 border-b-pink-600`
-                        : `pl-2 border-b-cyan-400`
-                    }`}
-                  >
-                    {experience.name}
-                  </h3>
-                  <h3 className="mb-2 text-lg text-gray-400">
-                    {experience.role}
-                  </h3>
-                  <p className="mb-4 text-base font-medium leading-snug tracking-wide text-gray-300 text-opacity-100">
-                    {experience.desc}
-                  </p>
-                  <p className="text-sm text-gray-400">{experience.time}</p>
-                </div>
-              </Link>
+            <div className="relative w-full pl-20 pr-4 md:pl-4">
+              <h3 className="block mb-4 text-2xl font-bold text-left md:hidden text-neutral-500 dark:text-neutral-500">
+                {item.title}
+              </h3>
+              {item.content}{" "}
             </div>
           </div>
         ))}
+        <div
+          style={{
+            height: height + "px",
+          }}
+          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
+        >
+          <motion.div
+            style={{
+              height: heightTransform,
+              opacity: opacityTransform,
+            }}
+            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full"
+          />
+        </div>
       </div>
     </div>
   );
