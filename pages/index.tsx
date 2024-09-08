@@ -7,7 +7,6 @@ import axios from "axios";
 import { FaSpotify, FaMusic } from "react-icons/fa";
 import { GetServerSideProps, NextPage } from "next";
 import { Timeline } from "../components/timeline";
-import { Skills } from "../components/skills";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import MetaData from "../components/metadata";
