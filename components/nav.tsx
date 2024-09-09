@@ -25,7 +25,7 @@ export const Nav: React.FC = () => {
                 <h4 className="text-xs">ne·​bu·​dev</h4>
                 <p className="text-sm">
                   Derived from the word ねぶそく (nebusoku), which translates to
-                  "lack of sleep" in Japanese.
+                  &quot;lack of sleep&quot; in Japanese.
                 </p>
                 <div className="flex items-center pt-2">
                   <span className="text-xs text-muted-foreground">
