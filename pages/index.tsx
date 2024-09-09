@@ -2,18 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import MetaImage from "../public/warrenog.png";
 
-import { Social } from "../components/social";
+import { Social } from "../components/content/social";
 import axios from "axios";
 import { FaSpotify, FaMusic } from "react-icons/fa";
 import { GetServerSideProps, NextPage } from "next";
-import { Timeline } from "../components/timeline";
+import { Timeline } from "../components/ui/timeline";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import MetaData from "../components/metadata";
-import { StarsBackground } from "../components/stars-background";
-import { ShootingStars } from "../components/shooting-stars";
-import { FlipWords } from "../components/flip-words";
-import { LayoutGrid } from "../components/image-grid";
+import MetaData from "../components/content/metadata";
+import { StarsBackground } from "../components/ui/stars-background";
+import { ShootingStars } from "../components/ui/shooting-stars";
+import { FlipWords } from "../components/ui/flip-words";
+import { LayoutGrid } from "../components/ui/image-grid";
+import { Gallary } from "../components/content/gallary";
+import SpotifyWebApi from "spotify-web-api-node";
 
 interface Props {
   song: string;
@@ -118,6 +120,7 @@ const Home: NextPage<Props> = (props) => {
           </div>
         </div>
       </div>
+
       <div className="flex items-center justify-center py-32 text-3xl md:py-16 md:text-lg text-zinc-400 font-bricolage">
         <div className="w-1/5 border border-yellow-600 md:w-1/12 " />
         <h1 className="mx-20 md:mx-4">
@@ -126,15 +129,14 @@ const Home: NextPage<Props> = (props) => {
         <div className="w-1/5 border border-yellow-600 md:w-1/12" />
       </div>
 
-      <div className="grid grid-cols-2 gap-4 px-20 md:grid-cols-1 md:px-4">
-        <div className="flex flex-col items-center justify-center h-full gap-4">
-          <img src="/display/tfc.png" className="w-full rounded-3xl" />
-          <img src="/display/pcb.png" className="w-full rounded-3xl" />
-        </div>
-        <img src="/display/card.png" className="w-full rounded-3xl" />
-      </div>
-      <div className="px-20 md:px-4">
-        <img src="/display/swag.jpeg" className="w-full mt-4 rounded-3xl" />
+      <Gallary />
+
+      <div className="flex items-center justify-center py-32 text-3xl md:py-16 md:text-lg text-zinc-400 font-bricolage">
+        <div className="w-1/5 border border-pink-700 md:w-1/12 " />
+        <h1 className="mx-20 md:mx-4">
+          <i>buildin' things is sometimes fun.</i>
+        </h1>
+        <div className="w-1/5 border border-pink-700 md:w-1/12" />
       </div>
     </>
   );
@@ -143,8 +145,20 @@ const Home: NextPage<Props> = (props) => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   require("dotenv").config();
 
-  const getData = await axios.get(`${process.env.DOMAIN}/api/spotify`);
-  const fetchedData = getData.data.data.body;
+  let spotifyApi = new SpotifyWebApi();
+  spotifyApi.setCredentials({
+    clientId: process.env.SPOTIFY_CLIENT_ID,
+    clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+    refreshToken: process.env.TOKEN,
+    redirectUri: "http://localhost:3000/callback/",
+  });
+
+  const token = await spotifyApi.refreshAccessToken();
+  spotifyApi.setAccessToken(token.body["access_token"]);
+
+  const currentTrack = await spotifyApi.getMyCurrentPlayingTrack();
+
+  const fetchedData = currentTrack.body;
   if (Object.keys(fetchedData).length === 0) {
     return {
       props: {
@@ -154,12 +168,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   } else {
     const isPlaying = fetchedData.is_playing;
-    const link = fetchedData.item.external_urls.spotify;
+    const link = fetchedData.item!.external_urls.spotify;
     let song = {};
     if (!isPlaying) {
       song = "Currently not jamming right now :(";
     } else {
-      song = fetchedData.item.name;
+      song = fetchedData.item!.name;
     }
 
     return {

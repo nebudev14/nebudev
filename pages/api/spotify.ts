@@ -27,7 +27,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           console.log("Error: " + err);
           res.status(500);
         });
+      res.status(400);
     });
+
   } else {
     res.status(400);
   }
