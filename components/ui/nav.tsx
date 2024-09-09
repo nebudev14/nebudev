@@ -3,14 +3,21 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@radix-ui/react-hover-card";
+import { useState } from "react";
 
 export const Nav: React.FC = () => {
+  const spinStates = ["/", "—", "\\", "|"];
+  const [currentSpin, setCurrentSpin] = useState(spinStates[0]);
+  setTimeout(() => {
+    const spin = spinStates[spinStates.indexOf(currentSpin) +1] || spinStates[0];
+    setCurrentSpin(spin);
+  }, 120);
   return (
     <div className=" font-bricolage fixed w-full flex items-center md:px-5 px-16 py-4  bg-opacity-90 bg-neutral-950  z-40 border-b-[1px] border-b-neutral-800">
       <h1 className="mr-2 font-mono text-xl md:text-xs hover:text-green-500 hover:underline hover:cursor-pointer">
         wyun.sh
       </h1>
-      <h1 className="font-mono text-xl md:text-xs"> \ </h1>
+      <h1 className="font-mono text-xl md:text-xs"> {currentSpin} </h1>
       <div className="z-50 mr-auto font-mono text-xl md:text-xs">
         <HoverCard>
           <HoverCardTrigger asChild>
@@ -37,8 +44,8 @@ export const Nav: React.FC = () => {
           </HoverCardContent>
         </HoverCard>
       </div>
-      <h1 className="mr-3 md:text-xs">about</h1>
-      <h1 className="mr-3 md:text-xs">photos</h1>
+      {/* <h1 className="mr-3 md:text-xs">about</h1>
+      <h1 className="mr-3 md:text-xs">photos</h1> */}
     </div>
   );
 };

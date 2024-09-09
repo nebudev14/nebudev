@@ -16,6 +16,7 @@ import { FlipWords } from "../components/ui/flip-words";
 import { LayoutGrid } from "../components/ui/image-grid";
 import { Gallary } from "../components/content/gallary";
 import SpotifyWebApi from "spotify-web-api-node";
+import { useState } from "react";
 
 interface Props {
   song: string;
@@ -25,8 +26,10 @@ interface Props {
 
 const Home: NextPage<Props> = (props) => {
   const { song, isPlaying, link } = props;
+ 
 
   const router = useRouter();
+
 
   return (
     <>

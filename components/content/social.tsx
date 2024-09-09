@@ -24,12 +24,6 @@ const socials = [
 export const Social: React.FC = () => {
   return (
     <div className="z-50 flex flex-col">
-      <div>
-        {/* <h1 className="inline-block mb-4 mr-1 font-mono"><Typing phrases={["'m Warren", "'m a develope"]}/></h1>
-        <span className="cursor-blink inline-block -translate-y-0.5 text-sm font-semibold">
-          |
-        </span> */}
-      </div>
       <div className="flex flex-row items-center justify-start mb-4">
         {socials.map((icon, i) => (
           <div
