@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-hover-card": "^1.1.1",
     "aceternity-ui": "^0.2.2",
     "axios": "^0.26.1",
     "class-variance-authority": "^0.7.0",

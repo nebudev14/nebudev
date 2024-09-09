@@ -13,6 +13,7 @@ import MetaData from "../components/metadata";
 import { StarsBackground } from "../components/stars-background";
 import { ShootingStars } from "../components/shooting-stars";
 import { FlipWords } from "../components/flip-words";
+import { LayoutGrid } from "../components/image-grid";
 
 interface Props {
   song: string;
@@ -32,18 +33,15 @@ const Home: NextPage<Props> = (props) => {
         <ShootingStars
           starWidth={15}
           trailColor="#db2777"
-          starColor="#0891b2"
+          starColor="#db2777"
           minSpeed={8}
           maxSpeed={15}
           starHeight={5}
           minDelay={2000}
           maxDelay={3000}
         />
-        <StarsBackground
-          starDensity={0.0010}
-          twinkleProbability={0.6}
-        />
-        <div className="grid grid-cols-2 px-8 md:grid-cols-1 md:">
+        <StarsBackground starDensity={0.001} twinkleProbability={0.6} />
+        <div className="grid grid-cols-2 px-8 md:grid-cols-1 border-b-[1px] border-b-neutral-800">
           <div className="z-10 flex items-center justify-center h-screen md:flex-col">
             <div className="pl-20 md:pl-0 md:w-full">
               <Social />
@@ -66,7 +64,7 @@ const Home: NextPage<Props> = (props) => {
                     ]}
                   />
                 </span>
-                from New York doing{" "}
+                from New York City doing{" "}
                 <span className="hover:text-yellow-600">robotics</span>,{" "}
                 <span className="hover:text-purple-500">
                   full-stack development
@@ -119,60 +117,24 @@ const Home: NextPage<Props> = (props) => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="flex items-center justify-center py-32 text-3xl md:py-16 md:text-lg text-zinc-400 font-bricolage">
+        <div className="w-1/5 border border-yellow-600 md:w-1/12 " />
+        <h1 className="mx-20 md:mx-4">
+          <i>professional do-er of things.</i>
+        </h1>
+        <div className="w-1/5 border border-yellow-600 md:w-1/12" />
+      </div>
 
-        <Timeline
-          data={[
-            {
-              title: "2024",
-              content: (
-                <h1 className="text-3xl">
-                  "Lorem ipsum odor amet, consectetuer adipiscing elit.
-                  Ullamcorper fames dapibus venenatis erat tellus fusce sit. Leo
-                  enim viverra habitant fusce adipiscing elit conubia. Dignissim
-                  aliquam justo mauris; nisi lacinia aliquet sollicitudin
-                  adipiscing. Potenti mi placerat sed mollis volutpat facilisi
-                  suscipit nisl. Habitasse platea elementum convallis viverra
-                  magnis, fames cursus? Purus torquent amet efficitur
-                  suspendisse; dignissim placerat felis quis. Taciti fusce vel
-                  proin habitasse pulvinar elit inceptos."
-                </h1>
-              ),
-            },
-            {
-              title: "2023",
-              content: (
-                <h1 className="text-3xl">
-                  "Lorem ipsum odor amet, consectetuer adipiscing elit.
-                  Ullamcorper fames dapibus venenatis erat tellus fusce sit. Leo
-                  enim viverra habitant fusce adipiscing elit conubia. Dignissim
-                  aliquam justo mauris; nisi lacinia aliquet sollicitudin
-                  adipiscing. Potenti mi placerat sed mollis volutpat facilisi
-                  suscipit nisl. Habitasse platea elementum convallis viverra
-                  magnis, fames cursus? Purus torquent amet efficitur
-                  suspendisse; dignissim placerat felis quis. Taciti fusce vel
-                  proin habitasse pulvinar elit inceptos."
-                </h1>
-              ),
-            },
-            {
-              title: "2022",
-              content: (
-                <h1 className="text-3xl">
-                  "Lorem ipsum odor amet, consectetuer adipiscing elit.
-                  Ullamcorper fames dapibus venenatis erat tellus fusce sit. Leo
-                  enim viverra habitant fusce adipiscing elit conubia. Dignissim
-                  aliquam justo mauris; nisi lacinia aliquet sollicitudin
-                  adipiscing. Potenti mi placerat sed mollis volutpat facilisi
-                  suscipit nisl. Habitasse platea elementum convallis viverra
-                  magnis, fames cursus? Purus torquent amet efficitur
-                  suspendisse; dignissim placerat felis quis. Taciti fusce vel
-                  proin habitasse pulvinar elit inceptos."
-                </h1>
-              ),
-            },
-            
-          ]}
-        />
+      <div className="grid grid-cols-2 gap-4 px-20 md:grid-cols-1 md:px-4">
+        <div className="flex flex-col items-center justify-center h-full gap-4">
+          <img src="/display/tfc.png" className="w-full rounded-3xl" />
+          <img src="/display/pcb.png" className="w-full rounded-3xl" />
+        </div>
+        <img src="/display/card.png" className="w-full rounded-3xl" />
+      </div>
+      <div className="px-20 md:px-4">
+        <img src="/display/swag.jpeg" className="w-full mt-4 rounded-3xl" />
       </div>
     </>
   );

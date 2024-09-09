@@ -6,7 +6,7 @@ import {
 
 export const Nav: React.FC = () => {
   return (
-    <div className=" font-bricolage fixed w-full flex items-center px-24 py-4  bg-opacity-90 bg-neutral-950  z-40 border-b-[1px] border-b-neutral-800">
+    <div className=" font-bricolage fixed w-full flex items-center px-16   py-4  bg-opacity-90 bg-neutral-950  z-40 border-b-[1px] border-b-neutral-800">
       <h1 className="mr-2 font-mono text-xl hover:text-green-500 hover:underline hover:cursor-pointer">wyun.sh</h1>
       <h1 className="font-mono text-xl"> \ </h1>
       <div className="z-50 mr-auto font-mono text-xl">
