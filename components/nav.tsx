@@ -6,13 +6,17 @@ import {
 
 export const Nav: React.FC = () => {
   return (
-    <div className=" font-bricolage fixed w-full flex items-center px-16   py-4  bg-opacity-90 bg-neutral-950  z-40 border-b-[1px] border-b-neutral-800">
-      <h1 className="mr-2 font-mono text-xl hover:text-green-500 hover:underline hover:cursor-pointer">wyun.sh</h1>
-      <h1 className="font-mono text-xl"> \ </h1>
-      <div className="z-50 mr-auto font-mono text-xl">
+    <div className=" font-bricolage fixed w-full flex items-center md:px-5 px-16 py-4  bg-opacity-90 bg-neutral-950  z-40 border-b-[1px] border-b-neutral-800">
+      <h1 className="mr-2 font-mono text-xl md:text-xs hover:text-green-500 hover:underline hover:cursor-pointer">
+        wyun.sh
+      </h1>
+      <h1 className="font-mono text-xl md:text-xs"> \ </h1>
+      <div className="z-50 mr-auto font-mono text-xl md:text-xs">
         <HoverCard>
           <HoverCardTrigger asChild>
-            <h1 className="ml-2 hover:cursor-pointer hover:underline">nebudev14</h1>
+            <h1 className="ml-2 hover:cursor-pointer hover:underline">
+              nebudev14
+            </h1>
           </HoverCardTrigger>
           <HoverCardContent className="w-80 bg-neutral-900">
             <div className="flex justify-between p-4 space-x-4 rounded-xl">
@@ -33,8 +37,8 @@ export const Nav: React.FC = () => {
           </HoverCardContent>
         </HoverCard>
       </div>
-      <h1 className="mr-3">about</h1>
-      <h1 className="mr-3">photos</h1>
+      <h1 className="mr-3 md:text-xs">about</h1>
+      <h1 className="mr-3 md:text-xs">photos</h1>
     </div>
   );
 };
