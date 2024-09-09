@@ -134,7 +134,7 @@ const Home: NextPage<Props> = (props) => {
       <div className="flex items-center justify-center py-32 text-3xl md:py-16 md:text-lg text-zinc-400 font-bricolage">
         <div className="w-1/5 border border-pink-700 md:w-1/12 " />
         <h1 className="mx-20 md:mx-4">
-          <i>buildin' things is sometimes fun.</i>
+          <i>buildin&apos; things is sometimes fun.</i>
         </h1>
         <div className="w-1/5 border border-pink-700 md:w-1/12" />
       </div>
